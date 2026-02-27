@@ -15,7 +15,7 @@ export default function Home() {
         </p>
 
         <p>
-          I&apos;m always open to chatting. The best way to reach me is at{" "}
+          I&apos;m always open to chatting. Email me at{" "}
           <a href="mailto:hello@example.com">vanessa.li@harvey.ai</a>.
         </p>
       </div>
