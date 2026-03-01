@@ -21,7 +21,7 @@ export default function Home() {
       </div>
 
       <div className="mt-12 space-y-1 text-lg">
-        <a href="x.com/cyvanessali" className="block">Twitter</a>
+        <a href="https://www.x.com/cyvanessali" className="block">Twitter</a>
         <a href="https://www.linkedin.com/in/vanessa1li" className="block">LinkedIn</a>
         <a href="https://github.com/VANESSA123LI" className="block">GitHub</a>
       </div>
