@@ -72,7 +72,6 @@ export default function Blog() {
             <thead>
               <tr className="border-b border-black">
                 <th className="text-left font-bold pb-2">Title</th>
-                <th className="text-right font-bold pb-2">Date</th>
               </tr>
             </thead>
 
@@ -84,7 +83,6 @@ export default function Blog() {
                       {post.title}
                     </Link>
                   </td>
-                  <td className="text-right py-2">{post.date}</td>
                 </tr>
               ))}
             </tbody>
@@ -100,7 +98,6 @@ export default function Blog() {
             <thead>
               <tr className="border-b border-black">
                 <th className="text-left font-bold pb-2">Title</th>
-                <th className="text-right font-bold pb-2">Date</th>
               </tr>
             </thead>
             <tbody>
@@ -111,7 +108,6 @@ export default function Blog() {
                       {post.title}
                     </Link>
                   </td>
-                  <td className="text-right py-2">{post.date}</td>
                 </tr>
               ))}
             </tbody>
