@@ -1,33 +1,5 @@
 import Link from "next/link";
 
-const personalPosts = [
-  { 
-    slug: "personal-1",
-    title: "Coming soon", 
-    date: "January 15, 2026"
-  },
-  { 
-    slug: "personal-2",
-    title: "Coming soon", 
-    date: "January 25, 2026"
-  },
-  { 
-    slug: "personal-3",
-    title: "Coming soon", 
-    date: "February 5, 2026"
-  },
-  { 
-    slug: "personal-4",
-    title: "Coming soon", 
-    date: "February 15, 2026"
-  },
-  { 
-    slug: "personal-5",
-    title: "Coming soon", 
-    date: "February 25, 2026"
-  },
-];
-
 const worldPosts = [
   { 
     slug: "world-1",
@@ -56,6 +28,34 @@ const worldPosts = [
   },
 ];
 
+const personalPosts = [
+  { 
+    slug: "personal-1",
+    title: "Coming soon", 
+    date: "January 15, 2026"
+  },
+  { 
+    slug: "personal-2",
+    title: "Coming soon", 
+    date: "January 25, 2026"
+  },
+  { 
+    slug: "personal-3",
+    title: "Coming soon", 
+    date: "February 5, 2026"
+  },
+  { 
+    slug: "personal-4",
+    title: "Coming soon", 
+    date: "February 15, 2026"
+  },
+  { 
+    slug: "personal-5",
+    title: "Coming soon", 
+    date: "February 25, 2026"
+  },
+];
+
 export default function Blog() {
   return (
     <main className="relative mx-auto max-w-2xl px-6 py-12">
@@ -67,7 +67,7 @@ export default function Blog() {
       <div className="space-y-12">
         {/* Personal Category */}
         <div>
-          <h2 className="text-xl font-bold mb-4">Personal</h2>
+          <h2 className="text-xl font-bold mb-4">World</h2>
           <table className="w-full text-lg border-collapse">
             <thead>
               <tr className="border-b border-black">
@@ -75,8 +75,9 @@ export default function Blog() {
                 <th className="text-right font-bold pb-2">Date</th>
               </tr>
             </thead>
+
             <tbody>
-              {personalPosts.map((post) => (
+              {worldPosts.map((post) => (
                 <tr key={post.slug} className="border-b border-black/10">
                   <td className="py-2">
                     <Link href={`/blog/${post.slug}`} className="hover:underline">
@@ -87,12 +88,14 @@ export default function Blog() {
                 </tr>
               ))}
             </tbody>
+
+
           </table>
         </div>
 
         {/* World Category */}
         <div>
-          <h2 className="text-xl font-bold mb-4">World</h2>
+          <h2 className="text-xl font-bold mb-4">Personal</h2>
           <table className="w-full text-lg border-collapse">
             <thead>
               <tr className="border-b border-black">
@@ -101,7 +104,7 @@ export default function Blog() {
               </tr>
             </thead>
             <tbody>
-              {worldPosts.map((post) => (
+              {personalPosts.map((post) => (
                 <tr key={post.slug} className="border-b border-black/10">
                   <td className="py-2">
                     <Link href={`/blog/${post.slug}`} className="hover:underline">
