@@ -4,11 +4,12 @@ export default function Home() {
   return (
     <main className="mx-auto max-w-2xl px-6 py-12">
       <div className="flex justify-between items-baseline mb-8">
-        <h1 className="text-2xl font-bold">Hi, I&apos;m Vanessa.</h1>
+        
         <Link href="/blog" className="text-lg">Blog</Link>
       </div>
 
       <div className="space-y-6 text-lg leading-relaxed">
+      <h1 className="text-2xl font-bold">Hi, I&apos;m Vanessa.</h1>
         <p>
           Welcome to my personal website. This is a space for my thoughts,
           projects, and things I find interesting.
