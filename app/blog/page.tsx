@@ -71,7 +71,7 @@ export default function Blog() {
           <table className="w-full text-lg border-collapse">
             <thead>
               <tr className="border-b border-black">
-                <th className="text-left font-bold pb-2">Title</th>
+                {/* <th className="text-left font-bold pb-2">Title</th> */}
               </tr>
             </thead>
 
@@ -97,7 +97,7 @@ export default function Blog() {
           <table className="w-full text-lg border-collapse">
             <thead>
               <tr className="border-b border-black">
-                <th className="text-left font-bold pb-2">Title</th>
+                {/* <th className="text-left font-bold pb-2">Title</th> */}
               </tr>
             </thead>
             <tbody>
