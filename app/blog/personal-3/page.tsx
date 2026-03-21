@@ -16,4 +16,3 @@ export default function PersonalBlog3() {
     </main>
   );
 }
-

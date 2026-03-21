@@ -13,8 +13,8 @@ const worldPosts = [
   },
   {
     slug: "world-3",
-    title: "Coming soon",
-    date: "February 10, 2026"
+    title: "Tel Aviv as a Middle Eastern Startup Hub",
+    date: "June 12, 2023"
   },
   {
     slug: "world-4",
