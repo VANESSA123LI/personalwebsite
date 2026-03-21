@@ -2,6 +2,11 @@ import Link from "next/link";
 
 const worldPosts = [
   {
+    slug: "world-3",
+    title: "Tel Aviv as a Middle Eastern Startup Hub",
+    date: "June 12, 2023"
+  },
+  {
     slug: "world-1",
     title: "FTX and the future of crypto",
     date: "December 6, 2022"
@@ -10,11 +15,6 @@ const worldPosts = [
     slug: "world-2",
     title: "The Future of US Regulations on Generative AI",
     date: "June 11, 2023"
-  },
-  {
-    slug: "world-3",
-    title: "Tel Aviv as a Middle Eastern Startup Hub",
-    date: "June 12, 2023"
   },
   {
     slug: "world-4",
