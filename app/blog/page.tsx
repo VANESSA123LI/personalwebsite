@@ -8,8 +8,8 @@ const worldPosts = [
   },
   {
     slug: "world-2",
-    title: "Coming soon",
-    date: "January 30, 2026"
+    title: "The Future of US Regulations on Generative AI",
+    date: "June 11, 2023"
   },
   {
     slug: "world-3",
