@@ -31,8 +31,8 @@ const worldPosts = [
 const personalPosts = [
   {
     slug: "personal-1",
-    title: "Coming soon",
-    date: "January 15, 2026"
+    title: "Occupying Mars",
+    date: "May 28, 2024"
   },
   {
     slug: "personal-2",
