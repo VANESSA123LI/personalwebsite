@@ -23,8 +23,8 @@ const worldPosts = [
   },
   {
     slug: "world-5",
-    title: "CComing soon",
-    date: "March 1, 2026"
+    title: "Goodhart's Law",
+    date: "May 27, 2024"
   },
 ];
 
