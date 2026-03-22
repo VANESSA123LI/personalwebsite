@@ -36,12 +36,12 @@ export default function WorldBlog2() {
             height={323}
             className="w-full max-w-[500px] h-auto rounded-lg"
           />
-          <figcaption className="mt-2 text-sm text-black/60 text-center">
+          <figcaption className="mt-2 text-sm text-black/60">
             Generative AI Conference in San Francisco in June 2023.
           </figcaption>
         </figure>
 
-        <div className="prose prose-lg max-w-none space-y-6 text-center">
+        <div className="prose prose-lg max-w-none space-y-6">
           <p>
             Washington DC is flooded with AI discussions. Executives cannot shut
             up about it. Technological innovations happen exponentially, and we
@@ -138,7 +138,7 @@ export default function WorldBlog2() {
               height={464}
               className="w-full max-w-[500px] h-auto rounded-lg"
             />
-            <figcaption className="mt-2 text-sm text-black/60 text-center">
+            <figcaption className="mt-2 text-sm text-black/60">
               Picture with tech investor Andrew Chen from a16z
             </figcaption>
           </figure>

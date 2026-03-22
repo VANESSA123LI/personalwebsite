@@ -9,7 +9,7 @@ const worldPosts = [
   {
     slug: "world-1",
     title: "FTX and the future of crypto",
-    date: "December 6, 2022"
+    date: "Dec 06, 2022"
   },
   {
     slug: "world-2",

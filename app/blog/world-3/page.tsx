@@ -133,7 +133,7 @@ export default function WorldBlog3() {
               height={481}
               className="w-full max-w-[500px] h-auto rounded-lg"
             />
-            <figcaption className="mt-2 text-sm text-black/60 text-center">
+            <figcaption className="mt-2 text-sm text-black/60">
               Just walked out of a tech conference
             </figcaption>
           </figure>
