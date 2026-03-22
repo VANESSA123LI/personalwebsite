@@ -18,8 +18,8 @@ const worldPosts = [
   },
   {
     slug: "world-4",
-    title: "Coming soon",
-    date: "February 20, 2026"
+    title: "Voice AI Finds Its Voice",
+    date: "August 20, 2025"
   },
   {
     slug: "world-5",
