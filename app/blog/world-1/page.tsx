@@ -13,7 +13,7 @@ export default function WorldBlog1() {
           <Link href="/blog" className="text-lg mb-4 inline-block">← Back to Blog</Link>
           <p className="text-sm text-gray-600 mb-2">World</p>
           <h1 className="text-3xl font-bold mt-4 mb-2">FTX and the future of crypto</h1>
-          <p className="text-gray-600">Dec 06, 2022</p>
+          <p className="text-gray-600">December 2022</p>
         </div>
 
         <div className="prose prose-lg">

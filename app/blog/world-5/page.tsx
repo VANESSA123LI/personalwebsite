@@ -20,7 +20,7 @@ export default function WorldBlog5() {
           <p className="text-black/60 mb-2">
             When a measure becomes a target, it ceases to be a good measure.
           </p>
-          <p className="text-black/60">Vanessa Li · May 27, 2024</p>
+          <p className="text-black/60">Vanessa Li · May 2024</p>
         </div>
 
         <div className="prose prose-lg max-w-none space-y-6">

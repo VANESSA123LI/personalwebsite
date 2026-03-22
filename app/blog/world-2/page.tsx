@@ -25,7 +25,7 @@ export default function WorldBlog2() {
           <h1 className="text-3xl font-bold mt-4 mb-2">
             The Future of US Regulations on Generative AI
           </h1>
-          <p className="text-black/60">Vanessa Li · June 11, 2023</p>
+          <p className="text-black/60">Vanessa Li · June 2023</p>
         </div>
 
         <figure className="my-8 flex flex-col items-center">

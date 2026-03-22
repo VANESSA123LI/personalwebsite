@@ -24,7 +24,7 @@ export default function PersonalBlog1() {
           <p className="text-black/60 mb-2">
             Why we should expand human consciousness in space.
           </p>
-          <p className="text-black/60">Vanessa Li · May 28, 2024</p>
+          <p className="text-black/60">Vanessa Li · May 2024</p>
         </div>
 
         <div className="prose prose-lg max-w-none space-y-6">

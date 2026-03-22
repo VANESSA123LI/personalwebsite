@@ -27,7 +27,7 @@ export default function WorldBlog3() {
           <h1 className="text-3xl font-bold mt-4 mb-2">
             Tel Aviv as a Middle Eastern Startup Hub
           </h1>
-          <p className="text-black/60">Vanessa Li · June 12, 2023</p>
+          <p className="text-black/60">Vanessa Li · June 2023</p>
         </div>
 
         <div className="prose prose-lg max-w-none space-y-6">

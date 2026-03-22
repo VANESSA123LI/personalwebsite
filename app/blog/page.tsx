@@ -4,27 +4,27 @@ const worldPosts = [
   {
     slug: "world-3",
     title: "Tel Aviv as a Middle Eastern Startup Hub",
-    date: "June 12, 2023"
+    date: "June 2023"
   },
   {
     slug: "world-1",
     title: "FTX and the future of crypto",
-    date: "Dec 06, 2022"
+    date: "December 2022"
   },
   {
     slug: "world-2",
     title: "The Future of US Regulations on Generative AI",
-    date: "June 11, 2023"
+    date: "June 2023"
   },
   {
     slug: "world-4",
     title: "Voice AI Finds Its Voice",
-    date: "August 20, 2025"
+    date: "August 2025"
   },
   {
     slug: "world-5",
     title: "Goodhart's Law",
-    date: "May 27, 2024"
+    date: "May 2024"
   },
 ];
 
@@ -32,7 +32,7 @@ const personalPosts = [
   {
     slug: "personal-1",
     title: "Occupying Mars",
-    date: "May 28, 2024"
+    date: "May 2024"
   },
   {
     slug: "personal-2",
@@ -42,17 +42,17 @@ const personalPosts = [
   {
     slug: "personal-3",
     title: "Coming soon",
-    date: "February 5, 2026"
+    date: "February 2026"
   },
   {
     slug: "personal-4",
     title: "Coming soon",
-    date: "February 15, 2026"
+    date: "February 2026"
   },
   {
     slug: "personal-5",
     title: "Coming soon",
-    date: "February 25, 2026"
+    date: "February 2026"
   },
 ];
 

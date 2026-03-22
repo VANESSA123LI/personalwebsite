@@ -20,7 +20,7 @@ export default function PersonalBlog2() {
           <p className="text-black/60 mb-2">
             What happens when your plan falls apart
           </p>
-          <p className="text-black/60">Vanessa Li · July 20, 2025</p>
+          <p className="text-black/60">Vanessa Li · July 2025</p>
         </div>
 
         <div className="prose prose-lg max-w-none space-y-6">

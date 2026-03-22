@@ -26,7 +26,7 @@ export default function WorldBlog4() {
           <p className="text-black/60 mb-2">
             Driving business efficiency with voice agents
           </p>
-          <p className="text-black/60">Vanessa Li · August 20, 2025</p>
+          <p className="text-black/60">Vanessa Li · August 2025</p>
         </div>
 
         <div className="prose prose-lg max-w-none space-y-6">
