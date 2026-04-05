@@ -4,8 +4,14 @@ export default function Home() {
   return (
     <main className="mx-auto max-w-2xl px-6 py-12">
       <div className="flex justify-between items-baseline mb-8">
-        
-        <Link href="/blog" className="text-lg ml-auto">Blog</Link>
+        <div className="ml-auto flex items-baseline gap-4">
+          <Link href="/blog" className="text-lg">
+            Blog
+          </Link>
+          <Link href="/projects" className="text-lg">
+            Projects
+          </Link>
+        </div>
       </div>
 
       <div className="space-y-6 text-lg leading-relaxed">
