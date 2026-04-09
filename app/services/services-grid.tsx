@@ -17,7 +17,7 @@ const SERVICES: Service[] = [
     emoji: "🎓",
     title: "College Admission Consulting",
     teaser:
-      "Guidance through the college application process and essay editing tailored to your story.",
+      "I will guarantee admission to your top 10 options",
     details:
       "I've helped students gain admission to Harvard, Stanford, Cornell, and other top universities. I specialize in working with ambitious students who want more than generic advice — from building a realistic, strategic school list to refining personal statements and supplements until your voice reads clearly on the page. I also offer extracurricular consulting to help you frame your activities with intention. Sessions are flexible: full-cycle support from start to finish, or focused editing on drafts you already have. The goal is applications that feel coherent, honest, and ready to submit with confidence.",
 
@@ -27,16 +27,16 @@ const SERVICES: Service[] = [
     emoji: "📊",
     title: "Industry Consulting",
     teaser:
-      "Strategic advisory for businesses and professionals facing growth, product, or execution decisions.",
+      "Strategic advisory.",
     details:
-      "I work with teams and individuals on prioritization, positioning, and how to communicate plans to stakeholders who need to align quickly. Engagements can be a single intensive working session or a short series of check-ins—always tied to concrete decisions, not abstract frameworks. Expect direct feedback, lightweight artifacts, and next steps you can act on immediately.",
+      "Industry insights advisory for businesses and professionals facing growth, product, or execution decisions.",
   },
   {
     id: "ai",
     emoji: "🤖",
     title: "AI Consulting & Implementation",
     teaser:
-      "Website builds, AI ops automation, workflow integration, and practical implementation—not slide decks.",
+      "Website building, AI operations automation, workflow integration.",
     details:
       "We start from real bottlenecks: manual reporting, handoffs between tools, or customer-facing experiences that need to ship. I help design small, reliable automations, connect systems you already use, and stand up simple sites or internal tools where they unlock the most value. Iteration is deliberate so teams actually adopt what we build instead of abandoning it after launch.",
   },
