@@ -13,8 +13,7 @@ export default function Services() {
       <header className="mb-12 max-w-2xl">
         <h1 className="text-2xl font-bold text-[#111]">Services</h1>
         <p className="mt-3 text-lg leading-relaxed text-black/70">
-          Select a category to learn more. I work with students, teams, and
-          operators who want clear execution—not generic advice.
+ 
         </p>
       </header>
 

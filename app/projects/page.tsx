@@ -10,7 +10,7 @@ export default function Projects() {
       </div>
 
       <div className="flex min-h-[50vh] items-center justify-center text-lg leading-relaxed">
-        <p>Coming Soon</p>
+        <p>Stealth</p>
       </div>
     </main>
   );

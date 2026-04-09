@@ -13,13 +13,14 @@ type Service = {
 
 const SERVICES: Service[] = [
   {
-    id: "college",
+    id: "college",s
     emoji: "🎓",
     title: "College Admission Consulting",
     teaser:
       "Guidance through the college application process and essay editing tailored to your story.",
     details:
-      "I help students build a realistic school list, stay ahead of deadlines, and refine personal statements and supplements so your voice reads clearly—not generic. Sessions combine structure with flexibility: full-cycle support or focused editing on drafts you already have. The goal is applications that feel coherent, honest, and ready to submit with confidence.",
+      "I've helped students gain admission to Harvard, Stanford, Cornell, and other top universities. I specialize in working with ambitious students who want more than generic advice — from building a realistic, strategic school list to refining personal statements and supplements until your voice reads clearly on the page. I also offer extracurricular consulting to help you frame your activities with intention. Sessions are flexible: full-cycle support from start to finish, or focused editing on drafts you already have. The goal is applications that feel coherent, honest, and ready to submit with confidence.",
+
   },
   {
     id: "industry",
