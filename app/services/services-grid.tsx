@@ -13,7 +13,7 @@ type Service = {
 
 const SERVICES: Service[] = [
   {
-    id: "college",s
+    id: "college",
     emoji: "🎓",
     title: "College Admission Consulting",
     teaser:
