@@ -35,6 +35,13 @@ export default function Home() {
         <a href="https://www.linkedin.com/in/vanessa1li" className="block">LinkedIn</a>
         <a href="https://github.com/VANESSA123LI" className="block">GitHub</a>
       </div>
+
+      <Link
+        href="/playground"
+        className="fixed bottom-6 right-6 z-10 text-lg"
+      >
+        Playground
+      </Link>
     </main>
   );
 }
