@@ -1,0 +1,17 @@
+import Link from "next/link";
+
+export default function Services() {
+  return (
+    <main className="relative mx-auto max-w-2xl px-6 py-12">
+      <div className="flex justify-between items-baseline mb-12">
+        <Link href="/" className="text-lg">
+          Home
+        </Link>
+      </div>
+
+      <div className="flex min-h-[50vh] items-center justify-center text-lg leading-relaxed">
+        <p>Coming Soon</p>
+      </div>
+    </main>
+  );
+}
