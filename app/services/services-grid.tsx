@@ -47,7 +47,7 @@ const SERVICES: Service[] = [
     teaser:
       "Mandarin ↔ English for manufacturing and sourcing—bridging teams, suppliers, and documentation across the Pacific.",
     details:
-      "I translate and localize technical specs, contracts, email threads, and meeting notes with attention to tone and intent on both sides of the relationship. Contexts range from factory updates and QC issues to commercial terms and project timelines. The aim is clarity and trust: everyone understands commitments, risks, and next actions without nuance getting lost between languages.",
+      "Words get lost in translation. I'm a native Chinese and English speaker with experience with technical terms. I bridge communication gaps in global supply chain and business operations. 我在中英双语环境中弥合全球供应链与商业运营中的沟通鸿沟——专业术语精准到位，不在翻译中失真。",
   },
 ];
 
