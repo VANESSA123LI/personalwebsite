@@ -38,7 +38,7 @@ const SERVICES: Service[] = [
     teaser:
       "Website building, AI operations automation, workflow integration.",
     details:
-      "We start from real bottlenecks: manual reporting, handoffs between tools, or customer-facing experiences that need to ship. I help design small, reliable automations, connect systems you already use, and stand up simple sites or internal tools where they unlock the most value. Iteration is deliberate so teams actually adopt what we build instead of abandoning it after launch.",
+      "Improve operational efficiency by leveraging AI to reduce manual workflows. I help ops and product teams design small, reliable automations, connect systems you already use. ",
   },
   {
     id: "translation",
