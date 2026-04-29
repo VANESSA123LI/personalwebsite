@@ -8,9 +8,9 @@ export default function Home() {
           <Link href="/blog" className="text-lg">
             Blog
           </Link>
-          <Link href="/services" className="text-lg">
+          {/* <Link href="/services" className="text-lg">
             Services
-          </Link>
+          </Link> */}
           <Link href="/projects" className="text-lg">
             Projects
           </Link>
