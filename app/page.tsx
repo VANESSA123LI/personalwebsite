@@ -26,7 +26,7 @@ export default function Home() {
 
         <p>
           I&apos;m always open to chatting. Email me at{" "}
-          <a href="mailto:hello@example.com">vanessa.li@yale.edu</a>.
+          <a href="mailto:hello@example.com">vanessali767@gmail.com</a>.
         </p>
       </div>
 
