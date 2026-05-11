@@ -29,7 +29,7 @@ export default function FAQs() {
         </details>
 
 
-
+{/* 
         <details className="group border-b border-gray-200 py-5">
           <summary className="cursor-pointer list-none flex justify-between items-center gap-4">
             <span> Where are you from?</span>
@@ -38,7 +38,7 @@ export default function FAQs() {
           <p className="mt-3 text-gray-700">eastern hemisphere</p>
         </details>
 
-
+ */}
 
 
 
@@ -47,16 +47,16 @@ export default function FAQs() {
             <span>Why do you do what you do?</span>
             <span className="ml-2 shrink-0 text-base transition-transform duration-300 group-open:rotate-180">▾</span>
           </summary>
-          <p className="mt-3 text-gray-700">To be answered</p>
+          <p className="mt-3 text-gray-700">For the glory of God</p>
         </details>
 
-        <details className="group border-b border-gray-200 py-5">
+        {/* <details className="group border-b border-gray-200 py-5">
           <summary className="cursor-pointer list-none flex justify-between items-center gap-4">
             <span>Who inspired you?</span>
             <span className="ml-2 shrink-0 text-base transition-transform duration-300 group-open:rotate-180">▾</span>
           </summary>
           <p className="mt-3 text-gray-700">To be answered</p>
-        </details>
+        </details> */}
       </div>
     </main>
   );
