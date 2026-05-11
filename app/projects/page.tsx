@@ -8,9 +8,9 @@ export default function Projects() {
           Home
         </Link>
       </div>
-
+      https://www.bosondevelopers.com/
       <div className="flex min-h-[50vh] items-center justify-center text-lg leading-relaxed">
-        <p>Stealth</p>
+        <p>and other Stealth work coming soon</p>
       </div>
     </main>
   );
