@@ -9,23 +9,54 @@ export default function FAQs() {
         </Link>
       </div>
 
-      <div className="space-y-8 text-lg leading-relaxed">
-        <h1 className="text-2xl font-bold">FAQs</h1>
+      <h1 className="text-2xl font-bold mb-8">FAQs</h1>
 
-        <div className="space-y-2">
-          <h2 className="font-semibold">Question 1?</h2>
-          <p>Placeholder answer for the first question.</p>
-        </div>
+      <div className="text-lg leading-relaxed border-t border-gray-200">
+        <details className="group border-b border-gray-200 py-5">
+          <summary className="cursor-pointer list-none flex justify-between items-center gap-4">
+            <span>Where are you based?</span>
+            <span className="ml-2 shrink-0 text-base transition-transform duration-300 group-open:rotate-180">▾</span>
+          </summary>
+          <p className="mt-3 text-gray-700">San Francisco! Sometimes I travel to NYC and LA.</p>
+        </details>
 
-        <div className="space-y-2">
-          <h2 className="font-semibold">Question 2?</h2>
-          <p>Placeholder answer for the second question.</p>
-        </div>
+        <details className="group border-b border-gray-200 py-5">
+          <summary className="cursor-pointer list-none flex justify-between items-center gap-4">
+            <span>How tall are you?</span>
+            <span className="ml-2 shrink-0 text-base transition-transform duration-300 group-open:rotate-180">▾</span>
+          </summary>
+          <p className="mt-3 text-gray-700">5'2</p>
+        </details>
 
-        <div className="space-y-2">
-          <h2 className="font-semibold">Question 3?</h2>
-          <p>Placeholder answer for the third question.</p>
-        </div>
+
+
+        <details className="group border-b border-gray-200 py-5">
+          <summary className="cursor-pointer list-none flex justify-between items-center gap-4">
+            <span> Where are you from?</span>
+            <span className="ml-2 shrink-0 text-base transition-transform duration-300 group-open:rotate-180">▾</span>
+          </summary>
+          <p className="mt-3 text-gray-700">eastern hemisphere</p>
+        </details>
+
+
+
+
+
+        <details className="group border-b border-gray-200 py-5">
+          <summary className="cursor-pointer list-none flex justify-between items-center gap-4">
+            <span>Why do you do what you do?</span>
+            <span className="ml-2 shrink-0 text-base transition-transform duration-300 group-open:rotate-180">▾</span>
+          </summary>
+          <p className="mt-3 text-gray-700">To be answered</p>
+        </details>
+
+        <details className="group border-b border-gray-200 py-5">
+          <summary className="cursor-pointer list-none flex justify-between items-center gap-4">
+            <span>Who inspired you?</span>
+            <span className="ml-2 shrink-0 text-base transition-transform duration-300 group-open:rotate-180">▾</span>
+          </summary>
+          <p className="mt-3 text-gray-700">To be answered</p>
+        </details>
       </div>
     </main>
   );
