@@ -6,7 +6,7 @@ export default function Home() {
       <div className="flex justify-between items-baseline mb-8">
         <div className="ml-auto flex items-baseline gap-4">
           <Link href="/blog" className="text-lg">
-            Blog
+            Blogs
           </Link>
           {/* <Link href="/services" className="text-lg">
             Services
