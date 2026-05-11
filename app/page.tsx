@@ -14,6 +14,9 @@ export default function Home() {
           <Link href="/projects" className="text-lg">
             Projects
           </Link>
+          <Link href="/faqs" className="text-lg">
+            FAQs
+          </Link>
         </div>
       </div>
 
