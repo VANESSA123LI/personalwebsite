@@ -15,7 +15,8 @@ export default function Home() {
             Projects
           </Link>
           <Link href="/faqs" className="text-lg">
-            FAQs
+          {/* temporarily hide FAQs */}
+            {/* FAQs */}
           </Link>
         </div>
       </div>
