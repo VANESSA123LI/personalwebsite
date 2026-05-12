@@ -47,15 +47,6 @@ const liveProjects: Project[] = [
       },
     ],
   },
-  {
-    index: "03",
-    name: "Fuel",
-    tagline: "Daily motivation shots for Gen Z.",
-    description:
-      "A daily dose of motivation — the spiciest quotes on the internet, served fresh. Designed to be the opposite of every soft, beige motivational app.",
-    role: "Co-founder · iOS",
-    year: "2025",
-  },
 ];
 
 function ProjectCard({ project }: { project: Project }) {
