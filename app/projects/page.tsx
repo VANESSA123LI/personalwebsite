@@ -209,7 +209,7 @@ export default function Projects() {
       <header className="mb-12 space-y-4">
         <h1 className="text-4xl font-bold tracking-tight">Projects</h1>
         <p className="text-lg leading-relaxed text-black/70">
-        I build things. A few are out in the world, others are still cooking.
+        I made things. A few are out in the world, others are still cooking.
         </p>
       </header>
 
