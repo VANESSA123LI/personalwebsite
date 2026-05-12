@@ -93,14 +93,7 @@ const liveProjects: Project[] = [
       { src: "/images/soft-robot-4.jpg", alt: "Soft robot — additional view" },
     ],
   },
-  {
-    index: "05",
-    name: "Photoshoots",
-    tagline: "A collection of photos.",
-    description:
-      "Portraits and photoshoots from over the years.",
-    links: [{ label: "View gallery", href: "/photoshoots" }],
-  },
+
   {
     index: "06",
     name: "Soil Rover",
@@ -114,6 +107,14 @@ const liveProjects: Project[] = [
       { src: "/images/soil-rover-3.jpg", alt: "Soil rover prototype — additional view" },
       { src: "/images/soil-rover-4.jpg", alt: "Soil rover prototype — additional view" },
     ],
+  },
+  {
+    index: "05",
+    name: "Photoshoots",
+    tagline: "A collection of photos.",
+    description:
+      "Portraits and photoshoots from over the years.",
+    links: [{ label: "View gallery", href: "/photoshoots" }],
   },
 ];
 
