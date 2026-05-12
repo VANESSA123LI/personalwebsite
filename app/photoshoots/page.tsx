@@ -8,6 +8,8 @@ type Photo = {
   height: number;
 };
 
+
+
 const photos: Photo[] = [
   { src: "/images/photoshoots/photo-1.jpg", alt: "Photoshoot", width: 2400, height: 3600 },
   { src: "/images/photoshoots/photo-2.jpg", alt: "Photoshoot", width: 2400, height: 3600 },
@@ -70,6 +72,7 @@ export default function Photoshoots() {
             className="h-auto w-full"
           />
         </div>
+        <p className="text-sm text-black/70">Filmed for Booth Entertainment</p>      
       </section>
     </main>
   );
