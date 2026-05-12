@@ -95,6 +95,14 @@ const liveProjects: Project[] = [
   },
   {
     index: "05",
+    name: "Photoshoots",
+    tagline: "A collection of photos.",
+    description:
+      "Portraits and photoshoots from over the years.",
+    links: [{ label: "View gallery", href: "/photoshoots" }],
+  },
+  {
+    index: "06",
     name: "Soil Rover",
     tagline: "MENG 185 project: soil tester.",
     description:
