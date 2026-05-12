@@ -72,7 +72,7 @@ export default function Photoshoots() {
             className="h-auto w-full"
           />
         </div>
-        <p className="text-sm text-black/70">Filmed for Booth Entertainment</p>      
+        <p className="text-sm text-black/70">Filmed for Booth Entertainment, 2023.</p>      
       </section>
     </main>
   );
