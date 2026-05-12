@@ -25,7 +25,7 @@ export default function Home() {
       <h1 className="text-2xl font-bold">Hi, I&apos;m Vanessa.</h1>
         <p>
           Welcome to my personal website. This is a space for my thoughts,
-          projects, and things I find interesting.
+          projects, and things I find interesting. This is a minimalist website just like me. 
         </p>
 
         <p>
