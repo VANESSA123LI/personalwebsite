@@ -58,75 +58,63 @@ const liveProjects: Project[] = [
   },
 ];
 
-const inDevelopment: Project[] = [
-  {
-    index: "04",
-    name: "Daily Meditation AI",
-    tagline: "A personal meditation guide that learns your day.",
-    description:
-      "Adaptive meditations generated from how your day actually went. In development.",
-    year: "2026",
-  },
-  {
-    index: "05",
-    name: "καιρός (Kairós)",
-    tagline: "The right moment, on purpose.",
-    description:
-      "Exploring how AI can help us notice and act on the right moments in life — not just measure time, but spend it well. Early concept.",
-    year: "2026",
-  },
-];
-
-function ProjectRow({ project }: { project: Project }) {
+function ProjectCard({ project }: { project: Project }) {
   return (
-    <article className="grid grid-cols-[2.5rem_1fr] gap-x-4 py-8 border-b border-black/10">
-      <div className="text-sm text-black/40 pt-1 tabular-nums">
-        {project.index}
+    <article className="group relative overflow-hidden rounded-3xl border border-black/10 bg-white p-8 transition-all duration-300 hover:border-black/30">
+      <div className="pointer-events-none absolute -right-20 -top-20 h-48 w-48 rounded-full bg-gradient-to-br from-amber-100 via-rose-100 to-sky-100 opacity-0 blur-3xl transition-opacity duration-500 group-hover:opacity-70" />
+
+      <div className="relative flex items-start justify-between gap-4">
+        <span className="text-xs tracking-[0.2em] text-black/40 tabular-nums">
+          {project.index}
+        </span>
+        {project.year && (
+          <span className="rounded-full border border-black/10 px-3 py-1 text-xs tabular-nums text-black/60">
+            {project.year}
+          </span>
+        )}
       </div>
-      <div className="space-y-3">
-        <div className="flex flex-wrap items-baseline justify-between gap-x-4">
-          <h3 className="text-2xl font-bold">{project.name}</h3>
-          {project.year && (
-            <span className="text-sm text-black/40 tabular-nums">
-              {project.year}
-            </span>
-          )}
+
+      <h3 className="relative mt-6 text-3xl font-bold tracking-tight">
+        {project.name}
+      </h3>
+      <p className="relative mt-2 text-lg italic text-black/70">
+        {project.tagline}
+      </p>
+      <p className="relative mt-4 text-base leading-relaxed text-black/80">
+        {project.description}
+      </p>
+
+      {project.links && project.links.length > 0 && (
+        <div className="relative mt-6 flex flex-wrap gap-2">
+          {project.links.map((link) => {
+            const isExternal = link.href.startsWith("http");
+            const classes =
+              "inline-flex items-center gap-1.5 rounded-full border border-black/15 px-4 py-1.5 text-sm transition-colors hover:border-black hover:bg-black hover:text-white";
+            return isExternal ? (
+              <a
+                key={link.href}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={classes}
+              >
+                {link.label} <span aria-hidden>↗</span>
+              </a>
+            ) : (
+              <Link key={link.href} href={link.href} className={classes}>
+                {link.label} <span aria-hidden>→</span>
+              </Link>
+            );
+          })}
         </div>
-        <p className="italic text-black/70 text-lg">{project.tagline}</p>
-        <p className="text-base leading-relaxed">{project.description}</p>
-        {project.role && (
-          <p className="text-sm text-black/50">{project.role}</p>
-        )}
-        {project.links && project.links.length > 0 && (
-          <div className="flex flex-wrap gap-x-5 gap-y-1 pt-1">
-            {project.links.map((link) => {
-              const isExternal = link.href.startsWith("http");
-              return isExternal ? (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-base"
-                >
-                  {link.label} ↗
-                </a>
-              ) : (
-                <Link key={link.href} href={link.href} className="text-base">
-                  {link.label} →
-                </Link>
-              );
-            })}
-          </div>
-        )}
-      </div>
+      )}
     </article>
   );
 }
 
 export default function Projects() {
   return (
-    <main className="relative mx-auto max-w-2xl px-6 py-12">
+    <main className="relative mx-auto max-w-3xl px-6 py-12">
       <div className="flex justify-between items-baseline mb-12">
         <Link href="/" className="text-lg">
           Home
@@ -134,41 +122,16 @@ export default function Projects() {
       </div>
 
       <header className="mb-12 space-y-4">
-        <h1 className="text-2xl font-bold">Projects</h1>
-        <p className="text-lg leading-relaxed">
-I build things. A few are out in the world, others are still cooking.
+        <h1 className="text-4xl font-bold tracking-tight">Projects</h1>
+        <p className="text-lg leading-relaxed text-black/70">
+        I build things. A few are out in the world, others are still cooking.
         </p>
       </header>
 
-      <section className="mb-16">
-        <div className="flex items-baseline justify-between mb-2 border-b border-black pb-2">
-          <h2 className="text-xl font-bold">Live</h2>
-          <span className="text-sm text-black/40">Shipped & shipping</span>
-        </div>
-        <div>
-          {liveProjects.map((project) => (
-            <ProjectRow key={project.name} project={project} />
-          ))}
-        </div>
-      </section>
-
-      <section className="mb-16">
-        <div className="flex items-baseline justify-between mb-2 border-b border-black pb-2">
-          <h2 className="text-xl font-bold">In Development</h2>
-          <span className="text-sm text-black/40">Coming soon</span>
-        </div>
-        <div>
-          {inDevelopment.map((project) => (
-            <ProjectRow key={project.name} project={project} />
-          ))}
-        </div>
-      </section>
-
-      <section className="pt-4 text-base leading-relaxed text-black/70">
-        <p>
-          Want to build something together, or just curious about the stack?{" "}
-          <a href="mailto:vanessali767@gmail.com">Drop me a line</a>.
-        </p>
+      <section className="space-y-6">
+        {liveProjects.map((project) => (
+          <ProjectCard key={project.name} project={project} />
+        ))}
       </section>
     </main>
   );
