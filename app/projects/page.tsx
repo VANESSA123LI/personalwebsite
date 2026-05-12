@@ -82,7 +82,7 @@ const liveProjects: Project[] = [
   {
     index: "04",
     name: "Silicone Soft Dance Bot",
-    tagline: "A pneumatic silicone robot that moves.",
+    tagline: "MENG 767 project:A pneumatic silicone robot that moves.",
     description:
       "Designed and fabricated a pneumatic soft robot for a graduate-level robotics course. 3D-printed casting molds shaped the body, EcoFlex 00-35 and Dragon Skin 10 silicones formed the layered structure, and embedded silicone tubes paired with syringes drove the actuation. Iterated through paper-inspired design.",
     year: "2025",
