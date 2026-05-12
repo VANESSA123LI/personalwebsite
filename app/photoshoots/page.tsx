@@ -59,6 +59,18 @@ export default function Photoshoots() {
           </div>
         ))}
       </section>
+
+      <section className="mt-12">
+        <div className="overflow-hidden rounded-2xl border border-black/10 bg-black/[0.02]">
+          <video
+            src="/videos/photoshoot-reel.mov"
+            controls
+            playsInline
+            preload="metadata"
+            className="h-auto w-full"
+          />
+        </div>
+      </section>
     </main>
   );
 }
