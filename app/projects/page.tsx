@@ -1,8 +1,14 @@
+import Image from "next/image";
 import Link from "next/link";
 
 type ProjectLink = {
   label: string;
   href: string;
+};
+
+type ProjectImage = {
+  src: string;
+  alt: string;
 };
 
 type Project = {
@@ -13,6 +19,7 @@ type Project = {
   role?: string;
   year?: string;
   links?: ProjectLink[];
+  images?: ProjectImage[];
 };
 
 const liveProjects: Project[] = [
@@ -47,6 +54,20 @@ const liveProjects: Project[] = [
       },
     ],
   },
+  {
+    index: "03",
+    name: "Balsawood Glider",
+    tagline: "1st place — MESA engineering competition.",
+    description:
+      "Designed and hand-built a balsawood glider for the MESA engineering competition, optimizing for lift, weight, and flight stability. Took home 1st place.",
+    year: "Early years",
+    images: [
+      {
+        src: "/images/balsawood-airplane.png",
+        alt: "Handmade balsawood airplane with purple wings and a red propeller",
+      },
+    ],
+  },
 ];
 
 function ProjectCard({ project }: { project: Project }) {
@@ -64,6 +85,25 @@ function ProjectCard({ project }: { project: Project }) {
           </span>
         )}
       </div>
+
+      {project.images && project.images.length > 0 && (
+        <div className="relative mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2">
+          {project.images.map((img) => (
+            <div
+              key={img.src}
+              className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-black/10 bg-black/[0.02]"
+            >
+              <Image
+                src={img.src}
+                alt={img.alt}
+                fill
+                sizes="(min-width: 640px) 50vw, 100vw"
+                className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+              />
+            </div>
+          ))}
+        </div>
+      )}
 
       <h3 className="relative mt-6 text-3xl font-bold tracking-tight">
         {project.name}
