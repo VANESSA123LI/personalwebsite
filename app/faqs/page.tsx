@@ -25,7 +25,7 @@ export default function FAQs() {
             <span>How tall are you?</span>
             <span className="ml-2 shrink-0 text-base transition-transform duration-300 group-open:rotate-180">▾</span>
           </summary>
-          <p className="mt-3 text-gray-700">5'2</p>
+          <p className="mt-3 text-gray-700">5&apos;2</p>
         </details>
 
 
