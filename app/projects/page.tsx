@@ -86,6 +86,26 @@ const liveProjects: Project[] = [
     description:
       "Designed and fabricated a pneumatic soft robot for a graduate-level robotics course. 3D-printed casting molds shaped the body, EcoFlex 00-35 and Dragon Skin 10 silicones formed the layered structure, and embedded silicone tubes paired with syringes drove the actuation — producing controlled, dance-like movement. Iterated through paper-inspired design, mold refinement, and pressure-based motion testing.",
     year: "2025",
+    images: [
+      {
+        src: "/images/soft-robot-materials.jpg",
+        alt: "Soft robot materials and methods — molds, silicone layers, and tubing",
+      },
+    ],
+  },
+  {
+    index: "05",
+    name: "Soil Rover",
+    tagline: "MENG 185 project: soil tester.",
+    description:
+      "A low-cost rover for sampling Martian soil. Swapped a scissor arm for a threaded rod, a pump for a straw, and digital pH transfer for a Bluetooth camera reading the probe. ",
+    year: "Grad school",
+    images: [
+      { src: "/images/soil-rover-1.jpg", alt: "Soil rover prototype" },
+      { src: "/images/soil-rover-2.jpg", alt: "Soil rover prototype — additional view" },
+      { src: "/images/soil-rover-3.jpg", alt: "Soil rover prototype — additional view" },
+      { src: "/images/soil-rover-4.jpg", alt: "Soil rover prototype — additional view" },
+    ],
   },
 ];
 
@@ -106,21 +126,36 @@ function ProjectCard({ project }: { project: Project }) {
       </div>
 
       {project.images && project.images.length > 0 && (
-        <div className="relative mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2">
-          {project.images.map((img) => (
-            <div
-              key={img.src}
-              className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-black/10 bg-black/[0.02]"
-            >
-              <Image
-                src={img.src}
-                alt={img.alt}
-                fill
-                sizes="(min-width: 640px) 50vw, 100vw"
-                className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-              />
-            </div>
-          ))}
+        <div
+          className={`relative mt-6 grid gap-3 ${
+            project.images.length === 1
+              ? "grid-cols-1"
+              : "grid-cols-1 sm:grid-cols-2"
+          }`}
+        >
+          {project.images.map((img) => {
+            const isSingle = project.images!.length === 1;
+            return (
+              <div
+                key={img.src}
+                className={`relative overflow-hidden rounded-2xl border border-black/10 bg-black/[0.02] ${
+                  isSingle ? "aspect-video" : "aspect-[4/3]"
+                }`}
+              >
+                <Image
+                  src={img.src}
+                  alt={img.alt}
+                  fill
+                  sizes={
+                    isSingle
+                      ? "100vw"
+                      : "(min-width: 640px) 50vw, 100vw"
+                  }
+                  className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                />
+              </div>
+            );
+          })}
         </div>
       )}
 
