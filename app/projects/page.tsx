@@ -81,16 +81,16 @@ const liveProjects: Project[] = [
   },
   {
     index: "04",
-    name: "Soft Robot Dance Bot",
-    tagline: "A pneumatic silicone robot that moves to the beat.",
+    name: "Silicone Soft Dance Bot",
+    tagline: "A pneumatic silicone robot that moves.",
     description:
       "Designed and fabricated a pneumatic soft robot for a graduate-level robotics course. 3D-printed casting molds shaped the body, EcoFlex 00-35 and Dragon Skin 10 silicones formed the layered structure, and embedded silicone tubes paired with syringes drove the actuation — producing controlled, dance-like movement. Iterated through paper-inspired design, mold refinement, and pressure-based motion testing.",
     year: "2025",
     images: [
-      {
-        src: "/images/soft-robot-materials.jpg",
-        alt: "Soft robot materials and methods — molds, silicone layers, and tubing",
-      },
+      { src: "/images/soft-robot-1.jpg", alt: "Soft robot fabrication" },
+      { src: "/images/soft-robot-2.jpg", alt: "Soft robot — additional view" },
+      { src: "/images/soft-robot-3.jpg", alt: "Soft robot — additional view" },
+      { src: "/images/soft-robot-4.jpg", alt: "Soft robot — additional view" },
     ],
   },
   {
