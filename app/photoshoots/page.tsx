@@ -63,7 +63,7 @@ export default function Photoshoots() {
       <section className="mt-12">
         <div className="overflow-hidden rounded-2xl border border-black/10 bg-black/[0.02]">
           <video
-            src="/videos/photoshoot-reel.mov"
+            src="/videos/photoshoot-reel.mp4"
             controls
             playsInline
             preload="metadata"
