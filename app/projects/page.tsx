@@ -62,8 +62,20 @@ const liveProjects: Project[] = [
       "Designed and hand-built a balsawood airplane for the MESA engineering competition",
     images: [
       {
-        src: "/images/balsawood-airplane.png",
-        alt: "Handmade balsawood airplane with purple wings and a red propeller",
+        src: "/images/balsawood-airplane-2.jpg",
+        alt: "Handmade balsawood glider",
+      },
+      {
+        src: "/images/balsawood-airplane-3.jpg",
+        alt: "Balsawood glider — additional view",
+      },
+      {
+        src: "/images/balsawood-airplane-4.jpg",
+        alt: "Balsawood glider — additional view",
+      },
+      {
+        src: "/images/balsawood-airplane-5.jpg",
+        alt: "Balsawood glider — additional view",
       },
     ],
   },
