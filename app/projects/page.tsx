@@ -59,8 +59,7 @@ const liveProjects: Project[] = [
     name: "Balsawood Glider",
     tagline: "1st place — MESA engineering competition.",
     description:
-      "Designed and hand-built a balsawood glider for the MESA engineering competition, optimizing for lift, weight, and flight stability. Took home 1st place.",
-    year: "Early years",
+      "Designed and hand-built a balsawood airplane for the MESA engineering competition",
     images: [
       {
         src: "/images/balsawood-airplane.png",
