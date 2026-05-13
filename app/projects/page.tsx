@@ -113,7 +113,7 @@ const liveProjects: Project[] = [
     name: "Photoshoots",
     tagline: "A collection of photos.",
     description:
-      "Portraits and photoshoots from over the years.",
+      "Peronal portfolio",
     links: [{ label: "View gallery", href: "/photoshoots" }],
   },
 ];
