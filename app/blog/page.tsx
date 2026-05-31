@@ -26,6 +26,11 @@ const worldPosts = [
     title: "Goodhart's Law",
     date: "May 2024"
   },
+    {
+    slug: "world-6",
+    title: "State of Robotics Data (May 2026)",
+    date: "May 2026"
+  },
 ];
 
 const personalPosts = [
