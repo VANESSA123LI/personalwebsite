@@ -1,6 +1,11 @@
 import Link from "next/link";
 
 const worldPosts = [
+      {
+    slug: "world-6",
+    title: "State of Robotics Data (May 2026)",
+    date: "May 2026"
+  },
   {
     slug: "world-3",
     title: "Tel Aviv as a Middle Eastern Startup Hub",
@@ -25,11 +30,6 @@ const worldPosts = [
     slug: "world-5",
     title: "Goodhart's Law",
     date: "May 2024"
-  },
-    {
-    slug: "world-6",
-    title: "State of Robotics Data (May 2026)",
-    date: "May 2026"
   },
 ];
 
