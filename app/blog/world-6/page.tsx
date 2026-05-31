@@ -146,7 +146,7 @@ export default function WorldBlog6() {
             premium data at a higher price.
           </p>
 
-          <h3 className="text-lg font-bold mt-6 mb-2">
+          <h3 className="text-xl font-bold mt-6 mb-2">
             Differentiating Factors for Ego Video Data
           </h3>
 
