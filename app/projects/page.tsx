@@ -61,10 +61,6 @@ const liveProjects: Project[] = [
     description:
       "Built test software for Starlink routes and ran manufacturing operations, taking the hardware from line bring-up through high-volume production.",
     role: "Test & Manufacturing Engineering",
-    images: [
-      { src: "/images/starlink-1.jpg", alt: "Starlink router test station" },
-      { src: "/images/starlink-2.jpg", alt: "Starlink manufacturing line" },
-    ],
   },
   {
     index: "04",
