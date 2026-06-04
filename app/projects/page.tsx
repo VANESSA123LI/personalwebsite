@@ -56,6 +56,18 @@ const liveProjects: Project[] = [
   },
   {
     index: "03",
+    name: "SpaceX Starlink",
+    tagline: "Test software and manufacturing for the Starlink router.",
+    description:
+      "Built test software for Starlink routes and ran manufacturing operations, taking the hardware from line bring-up through high-volume production.",
+    role: "Test & Manufacturing Engineering",
+    images: [
+      { src: "/images/starlink-1.jpg", alt: "Starlink router test station" },
+      { src: "/images/starlink-2.jpg", alt: "Starlink manufacturing line" },
+    ],
+  },
+  {
+    index: "04",
     name: "Balsawood Glider",
     tagline: "1st place — MESA engineering competition.",
     description:
@@ -80,7 +92,7 @@ const liveProjects: Project[] = [
     ],
   },
   {
-    index: "04",
+    index: "05",
     name: "Silicone Soft Dance Bot",
     tagline: "MENG 767 project:A pneumatic silicone robot that moves.",
     description:
@@ -109,7 +121,7 @@ const liveProjects: Project[] = [
     ],
   },
   {
-    index: "05",
+    index: "07",
     name: "Photoshoots",
     tagline: "A collection of photos.",
     description:
