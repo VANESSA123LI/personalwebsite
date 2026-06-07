@@ -38,7 +38,7 @@ export default function Home() {
           >
             Savant
           </a>
-          , a community of founders embarking on hardware quests. I am a scout for{" "}
+          , a community of founders embarking on hardware quests. I am in the Y Combinator program but will remain in stealth for a while. On the investing side, I am a scout for{" "}
           <a
             href="https://www.zettavp.com/"
             target="_blank"
@@ -63,7 +63,7 @@ export default function Home() {
           >
             circle
           </a>{" "}
-          at Pear VC.
+          at Pear VC. 
         </p>
 
         <p>
