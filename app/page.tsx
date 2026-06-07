@@ -46,7 +46,7 @@ export default function Home() {
           >
             Zetta Venture Partners
           </a>{""}
-          , an AI-native VC firm. I am
+          , an AI-native VC firm investing in pre-seed/seed stage. I am
           also a member of {" "}
           <a href="https://www.linkedin.com/company/velocityeleven/about/" 
           target="_blank" 
