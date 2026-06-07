@@ -81,8 +81,8 @@ export default function Home() {
             rel="noopener noreferrer"
           >
             The Elm Institute
-          </a>{" "}
-          at Yale, where I discussed philosophy and divinity at Yale. 
+          </a>{""}
+          , where I discussed philosophy and divinity at Yale. 
         </p>
 
         <p>
