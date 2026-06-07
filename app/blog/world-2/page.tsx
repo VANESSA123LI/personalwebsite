@@ -3,8 +3,8 @@ import Link from "next/link";
 
 const AI_CONFERENCE_IMAGE =
   "https://substack-post-media.s3.amazonaws.com/public/images/5898ed17-c8c2-4be9-afe4-e62f6fa1a677_800x516.png";
-const ANDREW_CHEN_IMAGE =
-  "https://substack-post-media.s3.amazonaws.com/public/images/691d4f93-ca83-4d5a-967a-9773acc79f6f_800x742.png";
+// const ANDREW_CHEN_IMAGE =
+//   "https://substack-post-media.s3.amazonaws.com/public/images/691d4f93-ca83-4d5a-967a-9773acc79f6f_800x742.png";
 
 export default function WorldBlog2() {
   return (
@@ -130,7 +130,7 @@ export default function WorldBlog2() {
             in the right direction.
           </p>
 
-          <figure className="my-8 flex flex-col items-center">
+          {/* <figure className="my-8 flex flex-col items-center">
             <Image
               src={ANDREW_CHEN_IMAGE}
               alt="Picture with tech investor Andrew Chen from a16z"
@@ -141,7 +141,7 @@ export default function WorldBlog2() {
             <figcaption className="mt-2 text-sm text-black/60">
               Picture with tech investor Andrew Chen from a16z
             </figcaption>
-          </figure>
+          </figure> */}
         </div>
       </div>
     </main>
