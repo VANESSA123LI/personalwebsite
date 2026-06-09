@@ -38,7 +38,16 @@ export default function Home() {
           >
             Savant
           </a>
-          , a community of founders embarking on hardware quests. I was accepted to join Y Combinator but have decided to postpone my batch date. On the investing side, I am a scout for{" "}
+          , a community of founders embarking on hardware quests. I was accepted to join{" "}
+          <a
+            href="https://www.ycombinator.com/verify/rei5gdcejhyco2d9"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline"
+          >
+            Y Combinator
+          </a>{" "}
+          but have decided to postpone my batch date. On the investing side, I am a scout for{" "}
           <a
             href="https://www.zettavp.com/"
             target="_blank"
