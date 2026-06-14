@@ -1,26 +1,149 @@
 @import "tailwindcss";
 
+/*
+  The whole page is one sky. A soft, luminous sky-blue holds the bio, then
+  deepens — as a real sky does toward the horizon — into the exact periwinkle
+  that Salvador Dalí's "The Persistence of Memory" (1931) begins with, so the
+  painting rises out of the background with no visible edge. Type is Times New
+  Roman; the link colour is drawn from the painting's deep sea so page and
+  picture share one palette.
+*/
 :root {
-  --background: #ffffff;
-  --foreground: #111111;
+  --sky-top: #e6eef7;     /* a whisper of pale sky — the bio background */
+  --sky: #6d95cd;         /* the painting's top-edge sky, sampled exactly */
+  --ink: #21303e;         /* deep slate, read off the painting's shadows */
+  --ink-soft: #46606f;    /* muted slate for secondary text */
+  --lapis: #234e6b;       /* the painting's deep sea, for links */
+  --lapis-deep: #15384f;
+  --glow: #f4f8fc;        /* faint daylight bloom near the top of the sky */
+
+  --background: var(--sky-top);
+  --foreground: var(--ink);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --font-sans: "Times New Roman", Times, serif;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
   color: var(--foreground);
+  background-color: var(--sky-top);
+  /* a wide, soft bloom of daylight high in the sky for depth */
+  background-image: radial-gradient(
+    130% 72% at 50% -12%,
+    color-mix(in srgb, var(--glow) 55%, transparent) 0%,
+    transparent 56%
+  );
+  background-repeat: no-repeat;
   font-family: "Times New Roman", Times, serif;
+  font-size: 1.0625rem;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
+/* ---- Links ---- */
 a {
-  color: inherit;
+  color: var(--lapis);
   text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+  text-decoration-color: color-mix(in srgb, var(--lapis) 38%, transparent);
+  transition: color 0.25s ease, text-decoration-color 0.25s ease;
+}
+a:hover {
+  color: var(--lapis-deep);
+  text-decoration-color: var(--lapis);
 }
 
-a:hover {
-  opacity: 0.7;
+/* Nav + social links: understated, no underline */
+.link-plain {
+  text-decoration: none;
+  color: var(--ink);
+}
+.link-plain:hover {
+  color: var(--lapis);
+}
+
+/* ---- The sky deepens toward the horizon and meets the painting ----
+   Top of this band is the bio's sky; the bottom is the exact blue the
+   painting starts with, so the seam between page and picture disappears. */
+.sky-fade {
+  height: clamp(320px, 50vh, 560px);
+  margin-top: 4.5rem;
+  background: linear-gradient(
+    180deg,
+    var(--sky-top) 0%,
+    var(--sky-top) 38%,
+    var(--sky) 100%
+  );
+}
+
+/* ---- The painting at the foot of the page ---- */
+.painting {
+  position: relative;
+  width: 100%;
+  line-height: 0;
+}
+.painting img {
+  width: 100%;
+  height: auto;
+  display: block; /* full fidelity — no filter, so the HD detail stays crisp */
+}
+/* feather the top of the image into the sky above it over a generous band,
+   so the painting's sky flows into the page's sky without a hard line */
+.painting::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 20%;
+  background: linear-gradient(
+    180deg,
+    var(--sky) 0%,
+    color-mix(in srgb, var(--sky) 55%, transparent) 38%,
+    rgba(109, 149, 205, 0) 100%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+.painting figcaption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 1.1rem;
+  z-index: 2;
+  text-align: center;
+  line-height: 1.5;
+  font-style: italic;
+  font-size: 0.8rem;
+  color: rgba(236, 242, 249, 0.82);
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.55);
+  padding: 0 1.5rem;
+}
+.painting figcaption .work {
+  font-style: normal;
+}
+
+/* ---- Floating Playground link: a soft frosted chip on the sky ---- */
+.playground-chip {
+  color: var(--ink);
+  text-decoration: none;
+  padding: 0.45rem 0.95rem;
+  border: 1px solid color-mix(in srgb, var(--ink) 20%, transparent);
+  border-radius: 999px;
+  background-color: color-mix(in srgb, white 55%, transparent);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  box-shadow: 0 2px 14px rgba(33, 48, 62, 0.18);
+  transition: color 0.25s ease, border-color 0.25s ease, background-color 0.25s ease;
+}
+.playground-chip:hover {
+  color: var(--lapis);
+  border-color: color-mix(in srgb, var(--lapis) 50%, transparent);
+  background-color: color-mix(in srgb, white 72%, transparent);
 }
