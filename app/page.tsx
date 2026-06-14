@@ -116,7 +116,8 @@ export default function Home() {
         <figcaption>
           <span className="work">The Persistence of Memory</span>
           <br />
-          Salvador Dalí &middot; 1931 &middot; Museum of Modern Art, New York
+          Salvador Dalí
+           {/* &middot; 1931 &middot; Museum of Modern Art, New York */}
         </figcaption>
       </figure>
 
