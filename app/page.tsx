@@ -68,10 +68,14 @@ export default function Home() {
 
         <p>
           A few years ago I decided to take a gap year in college to tinker and
-          ended up spending a year working at SpaceX, where I implemented a
+          ended up spending a year working at the Space Exploration Technologies Corporation (
+          <a href="https://www.spacex.com/" target="_blank" rel="noopener noreferrer">
+            SpaceX
+          </a>
+          ), where I implemented a
           refurbishment program for returned Starlink antennas and routers which
           saved the company millions of dollars in printed circuit board costs,
-          the most expensive component.
+          the most expensive component. I also worked on the development of Starlink mini routers.
         </p>
 
         <p>
@@ -116,7 +120,8 @@ export default function Home() {
         <figcaption>
           <span className="work">The Persistence of Memory</span>
           <br />
-          Salvador Dalí &middot; 1931 &middot; Museum of Modern Art, New York
+          Salvador Dalí
+           {/* &middot; 1931 &middot; Museum of Modern Art, New York */}
         </figcaption>
       </figure>
 
