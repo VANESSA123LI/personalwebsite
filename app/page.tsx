@@ -68,14 +68,14 @@ export default function Home() {
 
         <p>
           A few years ago I decided to take a gap year in college to tinker and
-          ended up spending a year working at Space Exploration Technologies Corporation (
+          ended up spending a year working at the Space Exploration Technologies Corporation (
           <a href="https://www.spacex.com/" target="_blank" rel="noopener noreferrer">
             SpaceX
           </a>
           ), where I implemented a
           refurbishment program for returned Starlink antennas and routers which
           saved the company millions of dollars in printed circuit board costs,
-          the most expensive component.
+          the most expensive component. I also worked on The development of Starlink mini routers.
         </p>
 
         <p>
