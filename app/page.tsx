@@ -24,8 +24,7 @@ export default function Home() {
       <section className="mx-auto max-w-2xl px-6 pt-8 space-y-6 text-lg leading-relaxed">
         <p>
           Welcome to my personal website. This is a space for my thoughts,
-          projects, and things I find interesting. This is a minimalist website
-          just like me.
+          projects, and things I find interesting. 
         </p>
 
         <p>
