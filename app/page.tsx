@@ -105,7 +105,7 @@ export default function Home() {
             Twitter
           </a>
            <a href="https://signal.me/#eu/W2D5X3lDfa88G2ozCcKjSXAsEcRTFgxJOEQmbFzzoFRshfLQR7RAu5KSOcgJovTp" className="link-plain">
-            Text Me
+            Signal
           </a>
         </div>
       </section>
