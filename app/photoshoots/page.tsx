@@ -23,6 +23,7 @@ const photos: Photo[] = [
   { src: "/images/photoshoots/photo-10.jpg", alt: "Photoshoot", width: 960, height: 1415 },
   { src: "/images/photoshoots/photo-11.jpg", alt: "Photoshoot", width: 1536, height: 2304 },
   { src: "/images/photoshoots/photo-12.jpg", alt: "Photoshoot", width: 1536, height: 2304 },
+  { src: "/images/photoshoots/photo-13.jpg", alt: "Photoshoot", width: 4288, height: 2848 },
 ];
 
 export default function Photoshoots() {
