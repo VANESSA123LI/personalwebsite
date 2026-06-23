@@ -40,7 +40,13 @@ export default function Home() {
           >
             Y Combinator
           </a>{" "}
-          but have decided to postpone my batch date. On the investing side, I am a scout for{" "}
+          but have decided to postpone my batch date. On the investing side, I am a 
+         {" "} <a href="https://en.wikipedia.org/wiki/Truffle_pig" target="_blank" rel="noopener noreferrer">
+          scout
+         
+    </a> 
+    {" "}
+           for{" "}
           <a href="https://www.zettavp.com/" target="_blank" rel="noopener noreferrer">
             Zetta Venture Partners
           </a>
