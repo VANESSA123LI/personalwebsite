@@ -59,7 +59,7 @@ export default function Home() {
           >
             V11
           </a>
-          , a talent community of builders. I have angel invested in a few
+          , a talent community of builders. I have angel invested in a few of my friends'
           companies. I was previously in the female founders{" "}
           <a
             href="https://pear.vc/programs/female-founder-circles/"
