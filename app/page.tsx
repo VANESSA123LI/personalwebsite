@@ -32,15 +32,15 @@ export default function Home() {
           <a href="https://www.savantvc.com/" target="_blank" rel="noopener noreferrer">
             Savant
           </a>
-          , a community of founders embarking on hardware quests. I was accepted to join{" "}
+          , a community of founders embarking on hardware quests. I am working with Diana at{" "}
           <a
             href="https://www.ycombinator.com/verify/rei5gdcejhyco2d9"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Y Combinator
+            Y Combinator.
           </a>{" "}
-          but have decided to postpone my batch date. On the investing side, I am a 
+          On the investing side, I am a 
          {" "} <a href="https://en.wikipedia.org/wiki/Truffle_pig" target="_blank" rel="noopener noreferrer">
           scout
          
