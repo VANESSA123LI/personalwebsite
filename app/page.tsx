@@ -40,7 +40,7 @@ export default function Home() {
           >
             Y Combinator.
           </a>{" "}
-          On the investing side, I am a 
+          As a W27 company. On the investing side, I am a 
          {" "} <a href="https://en.wikipedia.org/wiki/Truffle_pig" target="_blank" rel="noopener noreferrer">
           scout
          
