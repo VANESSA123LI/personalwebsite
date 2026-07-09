@@ -38,9 +38,9 @@ export default function Home() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Y Combinator.
+            Y Combinator
           </a>{" "}
-          As a W27 company. On the investing side, I am a 
+          as a W27 company. On the investing side, I am a 
          {" "} <a href="https://en.wikipedia.org/wiki/Truffle_pig" target="_blank" rel="noopener noreferrer">
           scout
          
