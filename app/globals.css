@@ -1,5 +1,46 @@
 @import "tailwindcss";
 
+/* Dark mode is toggled by a `.dark` class (set on the desktop root by the
+   menu-bar toggle) rather than the OS preference, so `dark:` utilities only
+   activate inside the macOS desktop page. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ---- macOS desktop (home page) ----------------------------------------
+   Everything under `.macos-root` renders with the Apple system font stack
+   so the desktop reads as native macOS; the rest of the site keeps its
+   Times New Roman styling untouched. */
+.macos-root {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text",
+    "SF Pro Display", "Helvetica Neue", system-ui, "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+.macos-root ::selection {
+  background: rgba(0, 122, 255, 0.25);
+}
+/* Thin, unobtrusive scrollbars inside app windows, like macOS overlay bars */
+.macos-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(120, 120, 128, 0.35) transparent;
+}
+.macos-scroll::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+.macos-scroll::-webkit-scrollbar-thumb {
+  background: rgba(120, 120, 128, 0.35);
+  border-radius: 8px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+.macos-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+/* Links inside the desktop opt out of the site-wide underlined link style */
+.macos-root a {
+  color: inherit;
+  text-decoration: none;
+}
+
 /*
   The whole page is one sky. A soft, luminous sky-blue holds the bio, then
   deepens — as a real sky does toward the horizon — into the exact periwinkle
