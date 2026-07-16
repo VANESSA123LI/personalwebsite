@@ -245,9 +245,10 @@ export default function NotesApp() {
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [query, setQuery] = useState("");
   // Narrow windows (container < @md) show one pane at a time: the note list,
-  // or — after a row is tapped — the reading pane with a back button. Wide
-  // windows always show both; this flag is ignored there.
-  const [compactShowNote, setCompactShowNote] = useState(false);
+  // or the reading pane with a back button. Starts on the reading pane so a
+  // phone visitor lands directly on the pinned bio note (selected by
+  // default). Wide windows always show both; this flag is ignored there.
+  const [compactShowNote, setCompactShowNote] = useState(true);
 
   // Rerender every 30s so relative-time labels stay fresh.
   const [, tickRelativeTime] = useReducer((n: number) => n + 1, 0);

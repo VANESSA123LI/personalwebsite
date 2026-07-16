@@ -38,13 +38,20 @@ const HANDLES: { dir: Dir; cls: string }[] = [
 
 const SPRING = { type: "spring", stiffness: 430, damping: 34, mass: 0.8 } as const;
 
+/** Vertical room the dock needs: shelf (icons + padding + running dots)
+    plus its 8px bottom offset, with a little breathing space. */
+const DOCK_CLEARANCE = 84;
+
 /** Usable desktop-area bounds. Real measurements are trusted even when
     phone-small; the desktop-ish floor applies only while every measurement
     is implausible (some environments briefly report 0-size rects/viewports
-    while settling). */
+    while settling). On phone-sized screens the dock's strip is reserved —
+    windows there are maximized and immovable, so anything underneath the
+    dock would be permanently hidden. */
 function areaBounds(area: DOMRect | undefined) {
   const w = Math.max(area?.width ?? 0, window.innerWidth);
-  const h = Math.max(area?.height ?? 0, window.innerHeight - 28);
+  let h = Math.max(area?.height ?? 0, window.innerHeight - 28);
+  if (w < 640) h -= DOCK_CLEARANCE;
   return { aw: w >= 240 ? w : 640, ah: h >= 200 ? h : 480 };
 }
 
