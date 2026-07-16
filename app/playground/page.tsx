@@ -107,7 +107,7 @@ export default function Playground() {
         userSelect: "none",
       }}
     >
-      <div style={{ width: gridW, margin: "0 auto 1rem", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+      <div style={{ width: "100%", maxWidth: gridW, margin: "0 auto 1rem", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
         <Link href="/" style={{ color: "#888", fontSize: 13, textDecoration: "none" }}>← Home</Link>
         <span style={{ color: "#fff", fontSize: 20, letterSpacing: "0.25em", fontWeight: 700 }}>PLAYGROUND</span>
         <button
@@ -121,6 +121,9 @@ export default function Playground() {
       <div
         style={{
           width: gridW,
+          // the board is fixed-size; small screens pan it instead of overflowing the page
+          maxWidth: "100%",
+          overflowX: "auto",
           margin: "0 auto",
           display: "grid",
           gridTemplateColumns: `repeat(${COLS}, ${CELL}px)`,
@@ -152,8 +155,11 @@ export default function Playground() {
       <div
         style={{
           width: "fit-content",
+          maxWidth: "100%",
           margin: "1.5rem auto 0",
           display: "flex",
+          flexWrap: "wrap",
+          justifyContent: "center",
           gap: 8,
           padding: "8px 12px",
           background: "rgba(0,0,0,0.7)",

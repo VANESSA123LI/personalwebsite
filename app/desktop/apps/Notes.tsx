@@ -204,6 +204,20 @@ function MagnifierIcon() {
 
 // (compose / pin / delete glyphs removed — the reader has no mutating actions)
 
+function BackGlyph() {
+  return (
+    <svg
+      viewBox="0 0 12 12"
+      className="h-4 w-4 fill-none stroke-current"
+      strokeWidth="1.8"
+      strokeLinecap="round"
+      aria-hidden="true"
+    >
+      <path d="M7.5 2 3.5 6l4 4" />
+    </svg>
+  );
+}
+
 /* ---- Component ---------------------------------------------------------- */
 
 /** Accept stored data only if it's an array; keep only well-shaped entries.
@@ -230,6 +244,10 @@ export default function NotesApp() {
   const [notes, setNotes] = useState<StoredNote[] | null>(null);
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [query, setQuery] = useState("");
+  // Narrow windows (container < @md) show one pane at a time: the note list,
+  // or — after a row is tapped — the reading pane with a back button. Wide
+  // windows always show both; this flag is ignored there.
+  const [compactShowNote, setCompactShowNote] = useState(false);
 
   // Rerender every 30s so relative-time labels stay fresh.
   const [, tickRelativeTime] = useReducer((n: number) => n + 1, 0);
@@ -282,7 +300,10 @@ export default function NotesApp() {
     rows: orderNotes(unpinned.filter((n) => n.folder === folder)),
   }));
 
-  const selectRow = (id: string) => setSelectedId(id);
+  const selectRow = (id: string) => {
+    setSelectedId(id);
+    setCompactShowNote(true);
+  };
 
   // First non-empty body line with markdown syntax stripped, like Notes'
   // plain-text previews.
@@ -328,7 +349,11 @@ export default function NotesApp() {
   return (
     <div className="flex h-full min-h-0 text-black dark:text-white">
       {/* Sidebar — semi-transparent so the Window vibrancy shows through */}
-      <div className="flex w-[220px] shrink-0 flex-col border-r border-black/10 dark:border-white/10">
+      <div
+        className={`flex w-[220px] shrink-0 flex-col border-r border-black/10 dark:border-white/10 @max-md:w-full @max-md:border-r-0 ${
+          compactShowNote ? "@max-md:hidden" : ""
+        }`}
+      >
         {/* Search (read-only reader — no compose/new-note button) */}
         <div className="p-2">
           <div className="flex min-w-0 items-center gap-1 rounded-md bg-black/5 px-2 py-1 dark:bg-white/10">
@@ -374,10 +399,21 @@ export default function NotesApp() {
       </div>
 
       {/* Reading pane — opaque main content */}
-      <div className="flex min-w-0 flex-1 flex-col bg-white dark:bg-[#1e1e1e]">
+      <div
+        className={`flex min-w-0 flex-1 flex-col bg-white dark:bg-[#1e1e1e] ${
+          compactShowNote ? "" : "@max-md:hidden"
+        }`}
+      >
         {selected ? (
           <>
-            <div className="pt-3 text-center text-[11px] text-black/40 dark:text-white/40">
+            <div className="relative pt-3 text-center text-[11px] text-black/40 dark:text-white/40">
+              <button
+                onClick={() => setCompactShowNote(false)}
+                aria-label="Back to note list"
+                className="absolute left-2 top-1.5 hidden rounded-md p-1.5 text-[#007aff] hover:bg-black/5 @max-md:flex dark:hover:bg-white/10"
+              >
+                <BackGlyph />
+              </button>
               {relativeTime(selected.editedAt)}
             </div>
             <div className="flex min-h-0 flex-1 flex-col px-6 pb-4">

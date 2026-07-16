@@ -38,6 +38,16 @@ const HANDLES: { dir: Dir; cls: string }[] = [
 
 const SPRING = { type: "spring", stiffness: 430, damping: 34, mass: 0.8 } as const;
 
+/** Usable desktop-area bounds. Real measurements are trusted even when
+    phone-small; the desktop-ish floor applies only while every measurement
+    is implausible (some environments briefly report 0-size rects/viewports
+    while settling). */
+function areaBounds(area: DOMRect | undefined) {
+  const w = Math.max(area?.width ?? 0, window.innerWidth);
+  const h = Math.max(area?.height ?? 0, window.innerHeight - 28);
+  return { aw: w >= 240 ? w : 640, ah: h >= 200 ? h : 480 };
+}
+
 export interface WindowProps {
   title: string;
   /** Committed geometry in desktop-area coordinates. */
@@ -97,16 +107,8 @@ export default function Window({
   useEffect(() => {
     if (inGesture.current) return;
     const area = desktopRef.current?.getBoundingClientRect();
-    // max() across measurements — some environments briefly report 0-size
-    // rects/viewports, and a permissive bound beats a crushed window
-    const target = maximized
-      ? {
-          x: 0,
-          y: 0,
-          w: Math.max(area?.width ?? 0, window.innerWidth, 640),
-          h: Math.max(area?.height ?? 0, window.innerHeight - 28, 480),
-        }
-      : geom;
+    const { aw, ah } = areaBounds(area);
+    const target = maximized ? { x: 0, y: 0, w: aw, h: ah } : geom;
     const opts = firstSync.current ? { duration: 0 } : SPRING;
     firstSync.current = false;
     if (x.get() !== target.x) animate(x, target.x, opts);
@@ -123,8 +125,9 @@ export default function Window({
     const onResize = () => {
       if (inGesture.current) return;
       const area = desktopRef.current?.getBoundingClientRect();
-      w.set(Math.max(area?.width ?? 0, window.innerWidth, 640));
-      h.set(Math.max(area?.height ?? 0, window.innerHeight - 28, 480));
+      const { aw, ah } = areaBounds(area);
+      w.set(aw);
+      h.set(ah);
       x.set(0);
       y.set(0);
     };
@@ -139,9 +142,11 @@ export default function Window({
     if (dir !== "move" && !resizable) return;
     e.preventDefault();
     const area = desktopRef.current?.getBoundingClientRect();
-    // permissive bounds (see the maximize note above)
-    const aw = Math.max(area?.width ?? 0, window.innerWidth, 640);
-    const ah = Math.max(area?.height ?? 0, window.innerHeight - 28, 480);
+    const { aw, ah } = areaBounds(area);
+    // the declared minimums can exceed a phone screen — never let a resize
+    // force the window wider/taller than what fits
+    const minWEff = Math.min(minW, aw - 16);
+    const minHEff = Math.min(minH, ah - 16);
     const start = { px: e.clientX, py: e.clientY, x: x.get(), y: y.get(), w: w.get(), h: h.get() };
     const pointerId = e.pointerId;
     inGesture.current = true;
@@ -165,16 +170,16 @@ export default function Window({
         y.set(clamp(start.y + dy, 0, ah - 40));
         return;
       }
-      if (dir.includes("e")) w.set(Math.max(minW, start.w + dx));
-      if (dir.includes("s")) h.set(Math.max(minH, start.h + dy));
+      if (dir.includes("e")) w.set(clamp(start.w + dx, minWEff, aw - start.x));
+      if (dir.includes("s")) h.set(clamp(start.h + dy, minHEff, ah - start.y));
       if (dir.includes("w")) {
-        const nw = Math.max(minW, start.w - dx);
+        const nw = clamp(start.w - dx, minWEff, start.x + start.w);
         x.set(start.x + start.w - nw);
         w.set(nw);
       }
       if (dir.includes("n")) {
         // north edge also may not push the window above the menu bar
-        const nh = clamp(start.h - dy, minH, start.y + start.h);
+        const nh = clamp(start.h - dy, minHEff, start.y + start.h);
         y.set(start.y + start.h - nh);
         h.set(nh);
       }
@@ -256,8 +261,11 @@ export default function Window({
           </span>
         </div>
 
-        {/* ---- App content ---- */}
-        <div className="flex min-h-0 flex-1 flex-col">{children}</div>
+        {/* ---- App content ----
+            @container lets app layouts respond to the WINDOW's width (not
+            the viewport's) — panes collapse when the window itself is
+            narrow, whether from a phone screen or a desktop resize. */}
+        <div className="@container flex min-h-0 flex-1 flex-col">{children}</div>
       </div>
 
       {/* ---- Resize handles ---- */}
@@ -308,7 +316,7 @@ function TrafficLights({
       <button
         aria-label="Close window"
         onClick={onClose}
-        className={`flex h-3 w-3 items-center justify-center rounded-full border border-black/[0.12] ${
+        className={`traffic-light relative flex h-3 w-3 items-center justify-center rounded-full border border-black/[0.12] ${
           focused ? "bg-[#ff5f57]" : inactive
         }`}
       >
@@ -317,7 +325,7 @@ function TrafficLights({
       <button
         aria-label="Minimize window"
         onClick={onMinimize}
-        className={`flex h-3 w-3 items-center justify-center rounded-full border border-black/[0.12] ${
+        className={`traffic-light relative flex h-3 w-3 items-center justify-center rounded-full border border-black/[0.12] ${
           focused ? "bg-[#febc2e]" : inactive
         }`}
       >
@@ -326,7 +334,7 @@ function TrafficLights({
       <button
         aria-label={maximizable ? "Zoom window" : "Zoom (unavailable)"}
         onClick={maximizable ? onToggleMaximize : undefined}
-        className={`flex h-3 w-3 items-center justify-center rounded-full border border-black/[0.12] ${
+        className={`traffic-light relative flex h-3 w-3 items-center justify-center rounded-full border border-black/[0.12] ${
           maximizable ? (focused ? "bg-[#28c840]" : inactive) : `cursor-default ${inactive}`
         }`}
       >

@@ -24,8 +24,26 @@ function Avatar({ conv, size }: { conv: Conversation; size: number }) {
   );
 }
 
+function BackGlyph() {
+  return (
+    <svg
+      viewBox="0 0 12 12"
+      className="h-4 w-4 fill-none stroke-current"
+      strokeWidth="1.8"
+      strokeLinecap="round"
+      aria-hidden="true"
+    >
+      <path d="M7.5 2 3.5 6l4 4" />
+    </svg>
+  );
+}
+
 export default function MessagesApp() {
   const [selectedId, setSelectedId] = useState(CONVERSATIONS[0]?.id);
+  // Narrow windows (container < @md) show one pane at a time: the
+  // conversation list, or — after a row is tapped — the thread with a back
+  // button. Wide windows always show both; this flag is ignored there.
+  const [compactShowThread, setCompactShowThread] = useState(false);
   const selected: Conversation | undefined =
     CONVERSATIONS.find((c) => c.id === selectedId) ?? CONVERSATIONS[0];
 
@@ -43,14 +61,21 @@ export default function MessagesApp() {
   return (
     <div className="flex h-full min-h-0 text-black dark:text-white">
       {/* ---- Conversation list (vibrancy sidebar) ---- */}
-      <div className="macos-scroll w-[224px] shrink-0 overflow-y-auto border-r border-black/10 p-2 dark:border-white/10">
+      <div
+        className={`macos-scroll w-[224px] shrink-0 overflow-y-auto border-r border-black/10 p-2 @max-md:w-full @max-md:border-r-0 dark:border-white/10 ${
+          compactShowThread ? "@max-md:hidden" : ""
+        }`}
+      >
         {CONVERSATIONS.map((conv) => {
           const isSelected = conv.id === selectedId;
           const lastText = conv.messages[conv.messages.length - 1]?.text ?? "";
           return (
             <button
               key={conv.id}
-              onClick={() => setSelectedId(conv.id)}
+              onClick={() => {
+                setSelectedId(conv.id);
+                setCompactShowThread(true);
+              }}
               className={`flex w-full items-center gap-2.5 rounded-lg px-2 py-2 text-left ${
                 isSelected
                   ? "bg-[#007aff] text-white"
@@ -83,9 +108,20 @@ export default function MessagesApp() {
       </div>
 
       {/* ---- Chat pane (opaque) ---- */}
-      <div className="flex min-w-0 flex-1 flex-col bg-white dark:bg-[#1e1e1e]">
+      <div
+        className={`flex min-w-0 flex-1 flex-col bg-white dark:bg-[#1e1e1e] ${
+          compactShowThread ? "" : "@max-md:hidden"
+        }`}
+      >
         {/* Header: "To: {name}" */}
-        <div className="flex items-center justify-center gap-1.5 border-b border-black/10 bg-white/60 py-2 dark:border-white/10 dark:bg-white/5">
+        <div className="relative flex items-center justify-center gap-1.5 border-b border-black/10 bg-white/60 py-2 dark:border-white/10 dark:bg-white/5">
+          <button
+            onClick={() => setCompactShowThread(false)}
+            aria-label="Back to conversation list"
+            className="absolute left-2 hidden rounded-md p-1.5 text-[#007aff] hover:bg-black/5 @max-md:flex dark:hover:bg-white/10"
+          >
+            <BackGlyph />
+          </button>
           <span className="text-[12px] text-black/50 dark:text-white/50">To:</span>
           <Avatar conv={selected} size={20} />
           <span className="text-[12px] font-medium">{selected.name}</span>

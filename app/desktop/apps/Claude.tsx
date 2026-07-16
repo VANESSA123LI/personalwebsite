@@ -54,7 +54,8 @@ function Sidebar() {
   const [tab, setTab] = useState<"Home" | "Code">("Home");
   return (
     <div
-      className="flex w-[250px] shrink-0 flex-col border-r border-white/10"
+      // decorative nav — hidden entirely in narrow windows
+      className="flex w-[250px] shrink-0 flex-col border-r border-white/10 @max-md:hidden"
       style={{ background: C.sidebar }}
     >
       {/* Home / Code toggle */}
@@ -137,7 +138,7 @@ function HomeView({ onOpen }: { onOpen: (id: string) => void }) {
   return (
     <div className="flex min-w-0 flex-1 flex-col">
       {/* greeting */}
-      <div className="flex items-center gap-3 px-8 pb-2 pt-8">
+      <div className="flex items-center gap-3 px-8 pb-2 pt-8 @max-md:px-4">
         <ClaudeMark className="h-7 w-7" />
         <h1 className="font-serif text-[25px] tracking-tight text-white/90">
           {CLAUDE_APP.greeting}
@@ -145,11 +146,11 @@ function HomeView({ onOpen }: { onOpen: (id: string) => void }) {
       </div>
 
       {/* Recents grid */}
-      <div className="macos-scroll min-h-0 flex-1 overflow-y-auto px-8 py-3">
+      <div className="macos-scroll min-h-0 flex-1 overflow-y-auto px-8 py-3 @max-md:px-4">
         <div className="mb-2.5 flex items-center gap-1.5 text-[12px] font-medium text-white/45">
           <ClockIcon /> Recents
         </div>
-        <div className="grid grid-cols-2 gap-2.5">
+        <div className="grid grid-cols-2 gap-2.5 @max-sm:grid-cols-1">
           {CLAUDE_APP.chats.map((chat) => (
             <button
               key={chat.id}

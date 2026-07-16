@@ -134,7 +134,7 @@ function ControlCenter({ onDismiss }: { onDismiss: () => void }) {
     <>
       {/* click-away layer */}
       <div className="fixed inset-0 z-[9001]" onClick={onDismiss} />
-      <div className="absolute right-2 top-[30px] z-[9002] w-[300px] rounded-2xl border border-black/10 bg-white/80 p-2.5 shadow-[0_10px_40px_rgba(0,0,0,0.25)] backdrop-blur-2xl dark:border-white/15 dark:bg-[#2a2a2c]/85">
+      <div className="absolute right-2 top-[30px] z-[9002] w-[300px] max-w-[calc(100vw-16px)] rounded-2xl border border-black/10 bg-white/80 p-2.5 shadow-[0_10px_40px_rgba(0,0,0,0.25)] backdrop-blur-2xl dark:border-white/15 dark:bg-[#2a2a2c]/85">
         <div className="grid grid-cols-3 gap-2">
           <CCToggle label="Wi-Fi" on={wifi} onToggle={() => setWifi((v) => !v)} icon={<WifiIcon />} />
           <CCToggle
@@ -386,9 +386,11 @@ function Clock() {
   if (!now) return <span className="w-32" />;
   const date = now.toLocaleDateString("en-US", { weekday: "short", month: "short", day: "numeric" });
   const time = now.toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit" });
+  // The date is dropped on very narrow screens so the status icons keep room.
   return (
     <span className="cursor-default whitespace-nowrap px-2 tabular-nums">
-      {date}&ensp;{time}
+      <span className="hidden min-[420px]:inline">{date}&ensp;</span>
+      {time}
     </span>
   );
 }
