@@ -502,12 +502,12 @@ export const CONVERSATIONS: Conversation[] = [
     avatarClass: "from-pink-400 to-rose-500",
     time: "9:41 AM",
     messages: [
-      { from: "them", text: "ok hear me out — vertical SaaS for robotics fleets" },
-      { from: "them", text: "every warehouse robot company is rebuilding the same ops dashboard from scratch" },
-      { from: "me", text: "lol you've been saying this since demo day" },
-      { from: "me", text: "but honestly the timing might finally be right" },
-      { from: "them", text: "hardware is eating the bay area again. american dynamism szn" },
-      { from: "me", text: "coffee this week? want to hear the GTM take" },
+      { from: "them", text: "any stocks rec?" },
+      { from: "them", text: "which stock should I go all in this week?" },
+      { from: "me", text: "The CPU and hardware stocks are gonna go over the roof" },
+      { from: "me", text: "but honestly you should diversify" },
+      { from: "them", text: "yolo" },
+      { from: "me", text: "coffee this week?" },
     ],
   },
   {
