@@ -572,7 +572,7 @@ export const REMINDER_LISTS: ReminderList[] = [
       { id: "rem-1", text: "Get grocery", done: false },
       { id: "rem-2", text: "Return Amazon package", done: false },
       { id: "rem-3", text: "Follow up with BBQ Capital", done: false },
-      { id: "rem-4", text: "", done: false },
+      { id: "rem-4", text: "shitpost on Twitter", done: false },
       { id: "rem-5", text: "", done: false },
     ],
   },
