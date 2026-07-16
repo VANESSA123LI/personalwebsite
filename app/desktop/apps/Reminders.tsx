@@ -67,6 +67,20 @@ function ListGlyph() {
   );
 }
 
+function BackGlyph() {
+  return (
+    <svg
+      viewBox="0 0 12 12"
+      className="h-4 w-4 fill-none stroke-current"
+      strokeWidth="1.8"
+      strokeLinecap="round"
+      aria-hidden="true"
+    >
+      <path d="M7.5 2 3.5 6l4 4" />
+    </svg>
+  );
+}
+
 /** One reminder row — used for both active and completed sections. */
 function ReminderRow({
   item,
@@ -162,6 +176,10 @@ export default function RemindersApp() {
   const [pending, setPending] = useState<Set<string>>(new Set());
   const [showCompleted, setShowCompleted] = useState(false);
   const [draft, setDraft] = useState("");
+  // Narrow windows (container < @md) show one pane at a time: the sidebar of
+  // lists, or — after a list is tapped — its reminders with a back button.
+  // Wide windows always show both; this flag is ignored there.
+  const [compactShowItems, setCompactShowItems] = useState(false);
   const pendingTimers = useRef<Map<string, ReturnType<typeof setTimeout>>>(
     new Map()
   );
@@ -315,7 +333,11 @@ export default function RemindersApp() {
   return (
     <div className="flex h-full min-h-0 text-black dark:text-white">
       {/* Sidebar: list of reminder lists (semi-transparent for vibrancy) */}
-      <div className="macos-scroll w-[190px] shrink-0 overflow-y-auto border-r border-black/10 p-2 dark:border-white/10">
+      <div
+        className={`macos-scroll w-[190px] shrink-0 overflow-y-auto border-r border-black/10 p-2 @max-md:w-full @max-md:border-r-0 dark:border-white/10 ${
+          compactShowItems ? "@max-md:hidden" : ""
+        }`}
+      >
         {REMINDER_LISTS.map((list) => {
           const isSelected = list.id === selected.id;
           const notDone = (data[list.id] ?? []).filter((i) => !i.done).length;
@@ -325,6 +347,7 @@ export default function RemindersApp() {
               onClick={() => {
                 setSelectedListId(list.id);
                 setDraft("");
+                setCompactShowItems(true);
               }}
               className={`flex w-full items-center gap-2 rounded-lg px-2 py-1.5 text-left ${
                 isSelected
@@ -345,7 +368,18 @@ export default function RemindersApp() {
       </div>
 
       {/* Main pane: selected list's reminders */}
-      <div className="macos-scroll min-w-0 flex-1 overflow-y-auto bg-white px-5 py-4 dark:bg-[#1e1e1e]">
+      <div
+        className={`macos-scroll min-w-0 flex-1 overflow-y-auto bg-white px-5 py-4 dark:bg-[#1e1e1e] ${
+          compactShowItems ? "" : "@max-md:hidden"
+        }`}
+      >
+        <button
+          onClick={() => setCompactShowItems(false)}
+          aria-label="Back to reminder lists"
+          className="-ml-2 mb-1 hidden rounded-md p-1.5 text-[#007aff] hover:bg-black/5 @max-md:flex dark:hover:bg-white/10"
+        >
+          <BackGlyph />
+        </button>
         {/* Header: list name + live not-done count, both in the list color */}
         <div className={`flex items-baseline justify-between ${headerColor}`}>
           <h1 className="text-[22px] font-bold">{selected.name}</h1>

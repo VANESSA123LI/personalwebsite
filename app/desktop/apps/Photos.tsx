@@ -36,8 +36,9 @@ export default function PhotosApp() {
 
   return (
     <div className="flex h-full min-h-0 text-black dark:text-white">
-      {/* ---- Sidebar (vibrancy) ---- */}
-      <div className="macos-scroll w-[170px] shrink-0 overflow-y-auto border-r border-black/10 p-2 dark:border-white/10">
+      {/* ---- Sidebar (vibrancy) ----
+          Decorative (one album) — hidden entirely in narrow windows. */}
+      <div className="macos-scroll w-[170px] shrink-0 overflow-y-auto border-r border-black/10 p-2 @max-md:hidden dark:border-white/10">
         <SidebarLabel label="Photos" />
         <SidebarRow name="Library" icon={<LibraryIcon />} />
         <SidebarLabel label="Albums" />

@@ -190,6 +190,9 @@ export default function Desktop() {
     const trustViewport = window.innerWidth >= 320 && window.innerHeight >= 240;
     const aw = window.innerWidth;
     const ah = Math.max(window.innerHeight - 28, 240);
+    // Phone-sized viewports show open windows maximized — free-floating
+    // desktop-sized windows aren't usable on a small touch screen.
+    const compact = trustViewport && aw < 640;
     const next = {} as Record<WindowKey, WinState>;
     for (const k of WINDOW_KEYS) {
       const def = WINDOW_DEFS[k];
@@ -205,6 +208,7 @@ export default function Desktop() {
               geom: { ...def.geom },
             };
       if (trustViewport) base.geom = clampGeom(base.geom, def, aw, ah);
+      if (compact && base.open && def.maximizable) base.maximized = true;
       next[k] = base;
     }
     zRef.current = Math.max(stored?.zTop ?? 10, ...Object.values(next).map((w) => w.z));
@@ -294,7 +298,15 @@ export default function Desktop() {
         ...Object.values(ws).filter((w) => w?.open).map((w) => w.z)
       );
       if (st.open && !st.minimized && st.z === topZ) return ws; // already front
-      return { ...ws, [k]: { ...st, open: true, minimized: false, z: ++zRef.current } };
+      // Windows opened on a phone-sized viewport start maximized (see the
+      // hydration note); restoring a minimized one keeps its existing state.
+      const compact = window.innerWidth < 640 && window.innerWidth >= 320;
+      const maximized =
+        st.maximized || (!st.open && compact && WINDOW_DEFS[k].maximizable);
+      return {
+        ...ws,
+        [k]: { ...st, open: true, minimized: false, maximized, z: ++zRef.current },
+      };
     });
 
   const closeWindow = (k: WindowKey) => patchWin(k, { open: false });
