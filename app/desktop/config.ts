@@ -439,40 +439,104 @@ export const CLAUDE_APP = {
 };
 
 /* ---- Photos ---------------------------------------------------------------
-   The Photos app's album — imported from the /photoshoots page. Assets are
-   referenced from /public, not duplicated. */
+   The Photos app's albums. "Photoshoots" is imported from the /photoshoots
+   page (assets referenced from /public, not duplicated). "Life" is served
+   from Supabase Storage (public bucket "photos", folder "life/"). */
 
 export interface AlbumPhoto {
   src: string;
   alt: string;
   width: number;
   height: number;
+  /** Capture date shown in the detail-view caption, macOS Photos style. */
+  date?: string;
+  /** Smaller rendition used for the grid tiles (falls back to src). */
+  thumb?: string;
 }
 
-export const PHOTO_ALBUM = {
-  name: "Photoshoots",
-  description: "Portraits and photoshoots from over the years.",
-  photos: [
-    { src: "/images/photoshoots/photo-1.jpg", alt: "Photoshoot", width: 2400, height: 3600 },
-    { src: "/images/photoshoots/photo-2.jpg", alt: "Photoshoot", width: 2400, height: 3600 },
-    { src: "/images/photoshoots/photo-3.jpg", alt: "Photoshoot", width: 5504, height: 8256 },
-    { src: "/images/photoshoots/photo-4.jpg", alt: "Photoshoot", width: 5175, height: 7762 },
-    { src: "/images/photoshoots/photo-5.jpg", alt: "Photoshoot", width: 8256, height: 5504 },
-    { src: "/images/photoshoots/photo-6.jpg", alt: "Photoshoot", width: 6240, height: 4160 },
-    { src: "/images/photoshoots/photo-7.jpg", alt: "Photoshoot", width: 6240, height: 4160 },
-    { src: "/images/photoshoots/photo-8.jpg", alt: "Photoshoot", width: 6240, height: 4160 },
-    { src: "/images/photoshoots/photo-9.jpg", alt: "Photoshoot", width: 960, height: 1392 },
-    { src: "/images/photoshoots/photo-10.jpg", alt: "Photoshoot", width: 960, height: 1415 },
-    { src: "/images/photoshoots/photo-11.jpg", alt: "Photoshoot", width: 1536, height: 2304 },
-    { src: "/images/photoshoots/photo-12.jpg", alt: "Photoshoot", width: 1536, height: 2304 },
-    { src: "/images/photoshoots/photo-13.jpg", alt: "Photoshoot", width: 4288, height: 2848 },
-  ] as AlbumPhoto[],
-  /** The photoshoot reel shown after the grid on the old page. */
-  video: {
-    src: "/videos/photoshoot-reel.mp4",
-    caption: "Filmed for Booth Entertainment, 2023.",
+export interface PhotoAlbum {
+  id: string;
+  name: string;
+  /** Optional line shown before the photo count in the album header. */
+  description?: string;
+  photos: AlbumPhoto[];
+  /** Optional reel shown after the grid as a video tile. */
+  video?: { src: string; caption: string };
+}
+
+/** Public base URL of the Supabase Storage bucket holding album photos. */
+const SUPABASE_PHOTOS =
+  "https://kxralsptwtcrzwkmbppt.supabase.co/storage/v1/object/public/photos";
+
+/** A Life-album entry: full-size and 512px-thumb objects share a filename. */
+const lifePhoto = (file: string, width: number, height: number): AlbumPhoto => ({
+  src: `${SUPABASE_PHOTOS}/life/${file}`,
+  thumb: `${SUPABASE_PHOTOS}/life/thumbs/${file}`,
+  alt: "Life",
+  width,
+  height,
+});
+
+export const PHOTO_ALBUMS: PhotoAlbum[] = [
+  {
+    id: "photoshoots",
+    name: "Photoshoots",
+    description: "Portraits and photoshoots from over the years.",
+    photos: [
+      { src: "/images/photoshoots/photo-1.jpg", alt: "Photoshoot", width: 2400, height: 3600 },
+      { src: "/images/photoshoots/photo-2.jpg", alt: "Photoshoot", width: 2400, height: 3600 },
+      { src: "/images/photoshoots/photo-3.jpg", alt: "Photoshoot", width: 5504, height: 8256 },
+      { src: "/images/photoshoots/photo-4.jpg", alt: "Photoshoot", width: 5175, height: 7762 },
+      { src: "/images/photoshoots/photo-5.jpg", alt: "Photoshoot", width: 8256, height: 5504 },
+      { src: "/images/photoshoots/photo-6.jpg", alt: "Photoshoot", width: 6240, height: 4160 },
+      { src: "/images/photoshoots/photo-7.jpg", alt: "Photoshoot", width: 6240, height: 4160 },
+      { src: "/images/photoshoots/photo-8.jpg", alt: "Photoshoot", width: 6240, height: 4160 },
+      { src: "/images/photoshoots/photo-9.jpg", alt: "Photoshoot", width: 960, height: 1392 },
+      { src: "/images/photoshoots/photo-10.jpg", alt: "Photoshoot", width: 960, height: 1415 },
+      { src: "/images/photoshoots/photo-11.jpg", alt: "Photoshoot", width: 1536, height: 2304 },
+      { src: "/images/photoshoots/photo-12.jpg", alt: "Photoshoot", width: 1536, height: 2304 },
+      { src: "/images/photoshoots/photo-13.jpg", alt: "Photoshoot", width: 4288, height: 2848 },
+    ],
+    /** The photoshoot reel shown after the grid on the old page. */
+    video: {
+      src: "/videos/photoshoot-reel.mp4",
+      caption: "Filmed for Booth Entertainment, 2023.",
+    },
   },
-};
+  {
+    id: "life",
+    name: "Life",
+    photos: [
+      lifePhoto("life-01.jpg", 1500, 2000),
+      lifePhoto("life-02.jpg", 2000, 923),
+      lifePhoto("life-03.jpg", 1500, 2000),
+      lifePhoto("life-04.jpg", 1500, 2000),
+      lifePhoto("life-05.jpg", 1500, 2000),
+      lifePhoto("life-06.jpg", 1500, 2000),
+      lifePhoto("life-07.jpg", 1500, 2000),
+      lifePhoto("life-08.jpg", 1500, 2000),
+      lifePhoto("life-09.jpg", 1500, 2000),
+      lifePhoto("life-10.jpg", 1500, 2000),
+      lifePhoto("life-11.jpg", 1337, 2000),
+      lifePhoto("life-12.jpg", 1125, 2000),
+      lifePhoto("life-13.jpg", 2000, 1333),
+      lifePhoto("life-14.jpg", 960, 1577),
+      lifePhoto("life-15.jpg", 1500, 2000),
+      lifePhoto("life-16.jpg", 1500, 2000),
+      lifePhoto("life-17.jpg", 1500, 2000),
+      lifePhoto("life-18.jpg", 1500, 2000),
+      lifePhoto("life-19.jpg", 1500, 2000),
+      lifePhoto("life-20.jpg", 1620, 1080),
+      lifePhoto("life-21.jpg", 1620, 1080),
+      lifePhoto("life-22.jpg", 2000, 1333),
+      lifePhoto("life-23.jpg", 1500, 2000),
+      lifePhoto("life-24.jpg", 960, 642),
+      lifePhoto("life-25.jpg", 1500, 2000),
+      lifePhoto("life-26.jpg", 1500, 2000),
+      lifePhoto("life-27.jpg", 1500, 2000),
+    ],
+  },
+];
 
 /* ---- Messages ------------------------------------------------------------
    Three invented personas — names and every bubble are placeholders meant to
