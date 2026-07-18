@@ -576,8 +576,8 @@ export const CONVERSATIONS: Conversation[] = [
   },
   {
     id: "chat-2",
-    name: "Francisco (cleaner)",
-    initials: "DK",
+    name: "Diego (cleaner)",
+    initials: "DC",
     avatarClass: "from-indigo-400 to-blue-600",
     time: "Yesterday",
     messages: [
