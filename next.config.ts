@@ -13,6 +13,11 @@ const nextConfig: NextConfig = {
         hostname: "substackcdn.com",
         pathname: "/image/**",
       },
+      {
+        protocol: "https",
+        hostname: "kxralsptwtcrzwkmbppt.supabase.co",
+        pathname: "/storage/v1/object/public/**",
+      },
     ],
   },
 };
