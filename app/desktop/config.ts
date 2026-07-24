@@ -117,7 +117,7 @@ export const NOTES: Note[] = [
     body: [
       `Welcome to my personal website. This is a space for my thoughts, projects, and things I find interesting.`,
       `I am currently an explorer at [Savant](https://www.savantvc.com/), a community of founders embarking on hardware quests. I am working with Diana at [Y Combinator](https://www.ycombinator.com/verify/rei5gdcejhyco2d9) as a W27 company. On the investing side, I am a [scout](https://en.wikipedia.org/wiki/Truffle_pig) for [Zetta Venture Partners](https://www.zettavp.com/), an AI-native VC firm investing in pre-seed/seed stage. I am also a member of [V11](https://www.linkedin.com/company/velocityeleven/about/), a talent community of builders. I have angel invested in a few of my friends' companies. I was previously in the female founders [circle](https://pear.vc/programs/female-founder-circles/) at Pear VC.`,
-      `A few years ago I decided to take a gap year in college to tinker and ended up spending a year working at the Space Exploration Technologies Corporation ([SpaceX](https://www.spacex.com/)), where I implemented a refurbishment program for returned Starlink antennas and routers which saved the company millions of dollars in printed circuit board costs, the most expensive component. I also worked on the development of Starlink mini routers. I absolutely loved my colleagues there and the work we did. My manager pushed me to become an entrepreneur and is one of my first believers. `,
+      `A few years ago I decided to take a gap year in college to tinker and ended up spending a year working at the Space Exploration Technologies Corporation ([SpaceX](https://www.spacex.com/)), where I implemented a refurbishment program for returned Starlink antennas and routers which saved the company millions of dollars in printed circuit board costs, the most expensive component. I also worked on the development of Starlink mini routers. I absolutely loved my colleagues there and the work we did. My manager pushed me to become an entrepreneur and was one of my first believers. `,
       `In college, I ran the Yale Undergraduate Venture Group and grew it to 70+ members. I was a frequent visitor of [The Elm Institute](https://www.elminstitute.org/), where I discussed philosophy and divinity at Yale.`,
       `I was a first-gen immigrant who knew nothing about the US before moving here. Now I am happy to call San Francisco home.`,
       `[GitHub](https://github.com/VANESSA123LI) · [LinkedIn](https://www.linkedin.com/in/vanessa1li) · [Twitter](https://www.x.com/cyvanessali) · [Signal](https://signal.me/#eu/W2D5X3lDfa88G2ozCcKjSXAsEcRTFgxJOEQmbFzzoFRshfLQR7RAu5KSOcgJovTp)`,
@@ -479,31 +479,6 @@ const lifePhoto = (file: string, width: number, height: number): AlbumPhoto => (
 
 export const PHOTO_ALBUMS: PhotoAlbum[] = [
   {
-    id: "photoshoots",
-    name: "Photoshoots",
-    description: "Portraits and photoshoots from over the years.",
-    photos: [
-      { src: "/images/photoshoots/photo-1.jpg", alt: "Photoshoot", width: 2400, height: 3600 },
-      { src: "/images/photoshoots/photo-2.jpg", alt: "Photoshoot", width: 2400, height: 3600 },
-      { src: "/images/photoshoots/photo-3.jpg", alt: "Photoshoot", width: 5504, height: 8256 },
-      { src: "/images/photoshoots/photo-4.jpg", alt: "Photoshoot", width: 5175, height: 7762 },
-      { src: "/images/photoshoots/photo-5.jpg", alt: "Photoshoot", width: 8256, height: 5504 },
-      { src: "/images/photoshoots/photo-6.jpg", alt: "Photoshoot", width: 6240, height: 4160 },
-      { src: "/images/photoshoots/photo-7.jpg", alt: "Photoshoot", width: 6240, height: 4160 },
-      { src: "/images/photoshoots/photo-8.jpg", alt: "Photoshoot", width: 6240, height: 4160 },
-      { src: "/images/photoshoots/photo-9.jpg", alt: "Photoshoot", width: 960, height: 1392 },
-      { src: "/images/photoshoots/photo-10.jpg", alt: "Photoshoot", width: 960, height: 1415 },
-      { src: "/images/photoshoots/photo-11.jpg", alt: "Photoshoot", width: 1536, height: 2304 },
-      { src: "/images/photoshoots/photo-12.jpg", alt: "Photoshoot", width: 1536, height: 2304 },
-      { src: "/images/photoshoots/photo-13.jpg", alt: "Photoshoot", width: 4288, height: 2848 },
-    ],
-    /** The photoshoot reel shown after the grid on the old page. */
-    video: {
-      src: "/videos/photoshoot-reel.mp4",
-      caption: "Filmed for Booth Entertainment, 2023.",
-    },
-  },
-  {
     id: "life",
     name: "Life",
     photos: [
@@ -535,6 +510,31 @@ export const PHOTO_ALBUMS: PhotoAlbum[] = [
       lifePhoto("life-26.jpg", 1500, 2000),
       lifePhoto("life-27.jpg", 1500, 2000),
     ],
+  },
+  {
+    id: "photoshoots",
+    name: "Photoshoots",
+    description: "Portraits and photoshoots from over the years.",
+    photos: [
+      { src: "/images/photoshoots/photo-1.jpg", alt: "Photoshoot", width: 2400, height: 3600 },
+      { src: "/images/photoshoots/photo-2.jpg", alt: "Photoshoot", width: 2400, height: 3600 },
+      { src: "/images/photoshoots/photo-3.jpg", alt: "Photoshoot", width: 5504, height: 8256 },
+      { src: "/images/photoshoots/photo-4.jpg", alt: "Photoshoot", width: 5175, height: 7762 },
+      { src: "/images/photoshoots/photo-5.jpg", alt: "Photoshoot", width: 8256, height: 5504 },
+      { src: "/images/photoshoots/photo-6.jpg", alt: "Photoshoot", width: 6240, height: 4160 },
+      { src: "/images/photoshoots/photo-7.jpg", alt: "Photoshoot", width: 6240, height: 4160 },
+      { src: "/images/photoshoots/photo-8.jpg", alt: "Photoshoot", width: 6240, height: 4160 },
+      { src: "/images/photoshoots/photo-9.jpg", alt: "Photoshoot", width: 960, height: 1392 },
+      { src: "/images/photoshoots/photo-10.jpg", alt: "Photoshoot", width: 960, height: 1415 },
+      { src: "/images/photoshoots/photo-11.jpg", alt: "Photoshoot", width: 1536, height: 2304 },
+      { src: "/images/photoshoots/photo-12.jpg", alt: "Photoshoot", width: 1536, height: 2304 },
+      { src: "/images/photoshoots/photo-13.jpg", alt: "Photoshoot", width: 4288, height: 2848 },
+    ],
+    /** The photoshoot reel shown after the grid on the old page. */
+    video: {
+      src: "/videos/photoshoot-reel.mp4",
+      caption: "Filmed for Booth Entertainment, 2023.",
+    },
   },
 ];
 
