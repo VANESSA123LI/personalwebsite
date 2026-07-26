@@ -102,6 +102,9 @@ export interface Note {
   title: string;
   /** Original publish date (YYYY-MM-DD) — becomes the note's shown date. */
   date?: string;
+  /** Overrides `date` for sidebar ordering only (YYYY-MM-DD); the note
+      still displays `date`. */
+  sortDate?: string;
   /** Markdown paragraphs. Supports #/##/### headings, **bold**, *italic*,
       [links](https://…), ![images](/path), > blockquotes, - lists, --- rules. */
   body: string[];
@@ -116,8 +119,8 @@ export const NOTES: Note[] = [
     title: "Hi, I'm Vanessa.",
     body: [
       `Welcome to my personal website. This is a space for my thoughts, projects, and things I find interesting.`,
-      `I am currently an explorer at [Savant](https://www.savantvc.com/), a community of founders embarking on hardware quests. I am working with Diana at [Y Combinator](https://www.ycombinator.com/verify/rei5gdcejhyco2d9) as a W27 company. On the investing side, I am a [scout](https://en.wikipedia.org/wiki/Truffle_pig) for [Zetta Venture Partners](https://www.zettavp.com/), an AI-native VC firm investing in pre-seed/seed stage. I am also a member of [V11](https://www.linkedin.com/company/velocityeleven/about/), a talent community of builders. I have angel invested in a few of my friends' companies. I was previously in the female founders [circle](https://pear.vc/programs/female-founder-circles/) at Pear VC.`,
-      `A few years ago I decided to take a gap year in college to tinker and ended up spending a year working at the Space Exploration Technologies Corporation ([SpaceX](https://www.spacex.com/)), where I implemented a refurbishment program for returned Starlink antennas and routers which saved the company millions of dollars in printed circuit board costs, the most expensive component. I also worked on the development of Starlink mini routers. I absolutely loved my colleagues there and the work we did. My manager pushed me to become an entrepreneur and was one of my first believers. `,
+      `I am currently a fellow at [Savant](https://www.savantvc.com/), a community of founders embarking on hardware quests. I am working with Diana at [Y Combinator](https://www.ycombinator.com/verify/rei5gdcejhyco2d9) as a W27 company. On the investing side, I am a [scout](https://en.wikipedia.org/wiki/Truffle_pig) for [Zetta Venture Partners](https://www.zettavp.com/), an AI-native VC firm investing in pre-seed/seed stage. I am also a member of [V11](https://www.linkedin.com/company/velocityeleven/about/), a talent community of builders. I have angel invested in a few of my friends' companies. I was previously in the female founders [circle](https://pear.vc/programs/female-founder-circles/) at Pear VC.`,
+      `A few years ago I decided to take a gap year in college to tinker and ended up spending a year working at the Space Exploration Technologies Corporation ([SpaceX](https://www.spacex.com/)), where I implemented a refurbishment program for returned Starlink antennas and routers which saved the company millions of dollars in printed circuit board costs, the most expensive component. I also worked on the development of Starlink mini routers. My manager pushed me to become an entrepreneur and was one of my first believers. `,
       `In college, I ran the Yale Undergraduate Venture Group and grew it to 70+ members. I was a frequent visitor of [The Elm Institute](https://www.elminstitute.org/), where I discussed philosophy and divinity at Yale.`,
       `I was a first-gen immigrant who knew nothing about the US before moving here. Now I am happy to call San Francisco home.`,
       `[GitHub](https://github.com/VANESSA123LI) · [LinkedIn](https://www.linkedin.com/in/vanessa1li) · [Twitter](https://www.x.com/cyvanessali) · [Signal](https://signal.me/#eu/W2D5X3lDfa88G2ozCcKjSXAsEcRTFgxJOEQmbFzzoFRshfLQR7RAu5KSOcgJovTp)`,
@@ -151,6 +154,7 @@ export const NOTES: Note[] = [
     folder: "Personal",
     title: "Velocity",
     date: "2025-07-15",
+    sortDate: "2024-05-04", // ranks just below "Occupying Mars" (2024-05-05)
     body: [
       `*What happens when your plan falls apart*\n*Personal · Vanessa Li · July 2025*`,
       `You know how airlines offer $5 death insurance in case your plane crashes—something you would laugh at and never buy because – honestly – what are the odds? Except this time, against all odds, my plane actually crashed.`,
