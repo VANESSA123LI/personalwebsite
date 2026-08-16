@@ -565,17 +565,16 @@ export interface Conversation {
 export const CONVERSATIONS: Conversation[] = [
   {
     id: "chat-1",
-    name: "Yoline Yin",
+    name: "Joe from Uber Eats",
     initials: "ML",
     avatarClass: "from-pink-400 to-rose-500",
     time: "9:41 AM",
         messages: [
-      { from: "them", text: "are you investing in them? " },
-      { from: "me", text: "wait what are they building again? " },
-      { from: "them", text: "not sure what they're building but the founders dropped out of Stanford and one of them was ex-spacex intern and seqouia is leading the round" },
-      { from: "me", text: "oh count me in!" },
-      { from: "them", text: "ok yea not sure what they're building but if seqouia is investing, I'm in too" },
-      { from: "me", text: "bet" },
+      { from: "them", text: "This is Joe, your delivery driver. ETA 7 mins. " },
+      { from: "me", text: "ok, thanks" },
+      { from: "them", text: "Btw I'm building a AI robotics company" },
+      { from: "them", text: "Raising our pre-seed rn. Would love to pitch you when I arrive" },
+
     ],
   },
   {
