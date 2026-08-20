@@ -26,6 +26,9 @@ interface StoredNote {
   folder: string;
   /** Last-edited timestamp, ms. */
   editedAt: number;
+  /** Timestamp used for sidebar ordering; equals editedAt unless the config
+      note carries a `sortDate` override. */
+  sortAt: number;
 }
 
 /** Folder used for user-created notes (the "New note" button). */
@@ -40,16 +43,22 @@ const FOLDER_ORDER = ["Personal", "World"];
     (YYYY-MM-DD) becomes its edited-at timestamp so blog posts keep their
     real dates; notes without one are staggered a day apart from now. */
 function seed(): StoredNote[] {
-  return NOTES.map((note, i) => ({
-    id: note.id,
-    title: note.title,
-    body: note.body.join("\n\n"),
-    pinned: note.folder === "Pinned",
-    folder: note.folder === "Pinned" ? DEFAULT_FOLDER : note.folder,
-    editedAt: note.date
+  return NOTES.map((note, i) => {
+    const editedAt = note.date
       ? new Date(`${note.date}T12:00:00`).getTime()
-      : Date.now() - i * 86_400_000,
-  }));
+      : Date.now() - i * 86_400_000;
+    return {
+      id: note.id,
+      title: note.title,
+      body: note.body.join("\n\n"),
+      pinned: note.folder === "Pinned",
+      folder: note.folder === "Pinned" ? DEFAULT_FOLDER : note.folder,
+      editedAt,
+      sortAt: note.sortDate
+        ? new Date(`${note.sortDate}T12:00:00`).getTime()
+        : editedAt,
+    };
+  });
 }
 
 /* ---- Relative time ----------------------------------------------------- */
@@ -225,17 +234,22 @@ function BackGlyph() {
     seed is used only when the stored value isn't a notes array at all. */
 function sanitizeNotes(raw: unknown): StoredNote[] {
   if (!Array.isArray(raw)) return seed();
-  return raw.filter(
-    (n): n is StoredNote =>
-      typeof n === "object" &&
-      n !== null &&
-      typeof (n as StoredNote).id === "string" &&
-      typeof (n as StoredNote).title === "string" &&
-      typeof (n as StoredNote).body === "string" &&
-      typeof (n as StoredNote).pinned === "boolean" &&
-      typeof (n as StoredNote).folder === "string" &&
-      Number.isFinite((n as StoredNote).editedAt),
-  );
+  return raw
+    .filter(
+      (n): n is StoredNote =>
+        typeof n === "object" &&
+        n !== null &&
+        typeof (n as StoredNote).id === "string" &&
+        typeof (n as StoredNote).title === "string" &&
+        typeof (n as StoredNote).body === "string" &&
+        typeof (n as StoredNote).pinned === "boolean" &&
+        typeof (n as StoredNote).folder === "string" &&
+        Number.isFinite((n as StoredNote).editedAt),
+    )
+    .map((n) => ({
+      ...n,
+      sortAt: Number.isFinite(n.sortAt) ? n.sortAt : n.editedAt,
+    }));
 }
 
 export default function NotesApp() {
@@ -266,10 +280,10 @@ export default function NotesApp() {
     setSelectedId(ordered[0]?.id ?? null);
   }, []);
 
-  /** Full display order: pinned first, then by editedAt descending. */
+  /** Full display order: pinned first, then by sortAt descending. */
   function orderNotes(list: StoredNote[]): StoredNote[] {
     return [...list].sort(
-      (a, b) => Number(b.pinned) - Number(a.pinned) || b.editedAt - a.editedAt,
+      (a, b) => Number(b.pinned) - Number(a.pinned) || b.sortAt - a.sortAt,
     );
   }
 
