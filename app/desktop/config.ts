@@ -185,14 +185,31 @@ export const NOTES: Note[] = [
   {
     id: "personal-3",
     folder: "Personal",
-    title: "Coming soon",
+    title: "Words and Stream of Consciousness",
     date: "2026-02-03",
-    body: [`*Personal · February 2026*`],
+    body: [`I had been my whole life a bell, and never knew it until at that moment I was lifted and struck.`,
+    `Those who cannot remember the past are condemned to repeat it.`,
+  `I am a frayed and nibbled survivor in a fallen world, and I am getting along. `,
+`Love is like a safety net, it catches you when you fell. `,
+`Living a comfortable life is like eating plain Nutella. Nothing beats the first spoon feeling but spoon after spoon it quickly becomes too sweet, and slightly nauseating.`,
+`Some things are worth fighting for. We fight for love, for freedom, for God, for goodness. `,
+`I still remember the moment I lost everything. Ever since, I have wondered if I could ever return to the person I once was, when happiness came effortlessly, and the world felt safe. Perhaps that is why I strive. The only way to protect the people and things I love is to have the power to protect them. I never want to lose what matters to me again. No amount of hard work or suffering come close to the unbearable pain of losing something you love and the powerlessness to stop it. I fight because I know what it feels like to lose everything. And I never will never let that happen again.`,
+`I watched snow fall for the first time in my dorm in New Haven. The snowflakes danced through the winter air, falling gracefully from the sky. That was one of the most beautiful things I had ever seen. Living is not about feeling comfortably satisfied, but feeling awed by moments like this that take our breath away. 
+`,
+
+
+
+
+
+
+
+],
+
   },
   {
     id: "personal-4",
     folder: "Personal",
-    title: "Coming soon",
+    title: "Coming Soon",
     date: "2026-02-02",
     body: [`*Personal · February 2026*`],
   },
