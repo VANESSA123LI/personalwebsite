@@ -188,6 +188,7 @@ export const NOTES: Note[] = [
     folder: "Personal",
     title: "Words and Stream of Consciousness",
     date: "2026-02-03",
+    sortDate: "2026-01-31", // ranks just below the two "Coming soon" notes (2026-02-01)
     body: [`I had been my whole life a bell, and never knew it until at that moment I was lifted and struck.`,
     `Those who cannot remember the past are condemned to repeat it.`,
   `I am a frayed and nibbled survivor in a fallen world, and I am getting along. `,
